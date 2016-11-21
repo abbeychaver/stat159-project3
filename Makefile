@@ -2,7 +2,7 @@ school = data/school_data.csv
 funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
 
-.PHONY: all data eda
+.PHONY: all data eda premodel
 
 all: eda
 
@@ -11,6 +11,11 @@ data:
 
 eda: $(school) $(funcs)
 	Rscript $(eda)
+
+premodel: data/combined_data.csv
+	Rscript code/scripts/premodeling.R
+
+
 
 
 
