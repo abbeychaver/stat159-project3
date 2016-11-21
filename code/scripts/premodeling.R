@@ -1,7 +1,8 @@
 school_data <- read.csv("data/combined_data.csv")
+school_data <- school_data[,-1]
 
 # Converting data to numeric
-for (i in 4:20) {
+for (i in 3:19) {
   school_data[, i] = as.numeric(as.character(school_data[, i]))
 }
 
