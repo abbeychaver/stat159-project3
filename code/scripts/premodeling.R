@@ -16,7 +16,7 @@ school_data$gap_completion_white_nra = school_data$C150_4_WHITE-school_data$C150
 school_data$gap_completion_white_unkn = school_data$C150_4_WHITE-school_data$C150_4_UNKN
 
 # Gap metrics of well-represented and underrepresented income groups
-school_data$gap_completion_high_low = (school_data$MN_EARN_WNE_INC3_P10-school_data$MN_EARN_WNE_INC1_P10)/school_data$MN_EARN_WNE_INC3_P10
-school_data$gap_completion_high_mid = (school_data$MN_EARN_WNE_INC3_P10-school_data$MN_EARN_WNE_INC2_P10)/school_data$MN_EARN_WNE_INC3_P10
+school_data$gap_earnings_high_low = (school_data$MN_EARN_WNE_INC3_P10-school_data$MN_EARN_WNE_INC1_P10)/school_data$MN_EARN_WNE_INC3_P10
+school_data$gap_earnings_high_mid = (school_data$MN_EARN_WNE_INC3_P10-school_data$MN_EARN_WNE_INC2_P10)/school_data$MN_EARN_WNE_INC3_P10
 
 write.csv(school_data, file = "data/gap_metrics_data.csv")
