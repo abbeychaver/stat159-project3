@@ -19,7 +19,7 @@ ui <- fluidPage(
   sidebarPanel(
 
     # Dropdown for user to select which earnings gap between income levels to use as y variable
-    selectInput('gap_earnings', 'Gap in Earnings', c("Between Highest and Lowest Terciles" = "gap_earnings_high_low", "Between Highest and Middle Terciles" = "gap_earnings_high_mid", "Between Middle and Lowest Terciles" = "gap_earnings_mid_low"))
+    selectInput('gap_earnings', 'Gap in Earnings Between', c("Highest and Lowest Terciles" = "gap_earnings_high_low", "Highest and Middle Terciles" = "gap_earnings_high_mid", "Middle and Lowest Terciles" = "gap_earnings_mid_low"))
   ),
 
   # Adds panel that shows the plotted output
