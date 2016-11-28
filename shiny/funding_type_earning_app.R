@@ -13,33 +13,39 @@ ui <- fluidPage(
   headerPanel('Earnings Gap VS School Funding'),
   sidebarPanel(
 
-    # Dropdown for user to select either TV, Radio, or Newspaper as x variable
+    # Dropdown for user to select which school type to plot
     selectInput('school_type', 'School Type', c("Public" = 1, "Private Nonprofit" = 2, "Private For-Profit" = 3))
   ),
-  #sidebarPanel(
+  sidebarPanel(
 
-    # Dropdown for user to select either TV, Radio, or Newspaper as x variable
-    #textInput(inputId = "school_name", label="School Name", value="John")
-  #),
+    # Dropdown for user to select which earnings gap between income levels to use as y variable
+    selectInput('gap_earnings', 'Gap in Earnings', c("Between Highest and Lowest Terciles" = "gap_earnings_high_low", "Between Highest and Middle Terciles" = "gap_earnings_high_mid", "Between Middle and Lowest Terciles" = "gap_earnings_mid_low"))
+  ),
 
   # Adds panel that shows the plotted output
   mainPanel(
-    plotOutput('plot')
+    plotOutput('plotAll')
   )
 )
 
 server <- function(input, output) {
 
-  # Grabs only the selected x column from above and Sales from advertising
+  # Grabs only the rows corresponding to the school type selected above
+  # Includes the expenditure per student column and the gap in earnings column selected above
   selectedData <- reactive({
-    income[income$CONTROL==input$school_type, c("INEXPFTE", "gap_earnings_high_low")]
+    income[income$CONTROL==input$school_type, c("INEXPFTE", input$gap_earnings)]
   })
 
-  # Plots Sales vs the selected x column and saves it as reactive output object
-  output$plot <- renderPlot({
+  # Plots selected earnings gap vs expenditure per student and saves it as reactive output object
+  output$plotAll <- renderPlot({
     par(mar = c(5.1, 4.1, 0, 1))
     plot(selectedData(),
-         pch = 20, cex = 2)
+         pch = 20, cex = 0.8,
+         ylim=c(-0.7, 0.7),
+         xlim=c(0, 65000),
+         ylab="Percent Gap in Earnings",
+         xlab="Expenditure Per Student ($)"
+        )
   })
 }
 
