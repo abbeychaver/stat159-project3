@@ -57,6 +57,7 @@ server <- function(input, output) {
          xlab="Expenditure Per Student ($)"
     )
     abline(lm(selectedData()[,2] ~ selectedData()$INEXPFTE),  col = "coral2")
+    dev.off()
   })
 }
 

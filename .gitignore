@@ -2,3 +2,4 @@
 .DS_Store
 .RData
 data/school_data.csv
+shiny/Rplots.pdf
