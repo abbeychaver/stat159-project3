@@ -46,6 +46,7 @@ server <- function(input, output) {
          ylab="Percent Gap in Earnings",
          xlab="Expenditure Per Student ($)"
         )
+    abline(lm(selectedData()[,2] ~ selectedData()$INEXPFTE),  col = "coral2")
   })
 }
 
