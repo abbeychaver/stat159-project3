@@ -1,6 +1,7 @@
 school = data/school_data.csv
 funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
+income = data/Income.csv
 
 .PHONY: all data eda premodel ols
 
@@ -17,6 +18,12 @@ premodel: data/combined_data.csv
 
 ols: code/scripts/ols-second-model.R data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
 				cd code/scripts; Rscript ols-second-model.R
+
+shiny-earnings: 
+	Rscript -e "library(shiny); runApp('shiny/funding_type_earning_app.R', launch.browser = TRUE)"
+
+shiny-completion:
+	Rscript -e "library(shiny); runApp('shiny/funding_type_completion_app.R', launch.browser = TRUE)"
 
 
 

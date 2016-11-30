@@ -30,7 +30,7 @@ cr_w_b <- na.omit(cr_w_b)
 cr_w_b$gap_completion_white_black = (cr_w_b$C150_4_WHITE-cr_w_b$C150_4_BLACK)/cr_w_b$C150_4_WHITE
 cr_w_b2 <- cr_w_b[cr_w_b$C150_4_WHITE != 0, ]
 cr_w_b2 <- cr_w_b2[cr_w_b2$C150_4_BLACK != 0, ]
-# Two historically black universities have 0% completion rates for students, remove these 
+# Two historically black universities have 0% completion rates for students, remove these
 cr_w_b <- cr_w_b2[is.finite(cr_w_b$gap_completion_white_black),]
 write.csv(cr_w_b, file="data/Completion_W_B.csv")
 
@@ -51,7 +51,7 @@ cr_w_a$gap_completion_white_asian = (cr_w_a$C150_4_WHITE-cr_w_a$C150_4_ASIAN)/cr
 cr_w_a2 <- cr_w_a[cr_w_a$C150_4_WHITE != 0, ]
 cr_w_a2 <- cr_w_a2[cr_w_a2$C150_4_ASIAN != 0, ]
 cr_w_a2 <- cr_w_a2[is.finite(cr_w_a$gap_completion_white_asian),]
-write.csv(cr_w_b, file="data/Completion_W_A.csv")
+write.csv(cr_w_a2, file="data/Completion_W_A.csv")
 
 # Separate incomes rates out to remove rows with NA values
 income_rates <- school_data[, c(1:4, 17:19)]

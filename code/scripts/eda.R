@@ -20,7 +20,9 @@ for (i in 1:length(cols)) {
   vec = as.numeric(as.character(school_data[, cols[i]]))
   vec = vec[!is.na(vec)]
   quant_stats(vec, names[i])
-  data[, i] = as.numeric(as.character(data[, i]))
+  if (i != 1) {
+    data[, i] = as.numeric(as.character(data[, i]))
+  }
 }
 
 # Create new dataframe with relevant columns

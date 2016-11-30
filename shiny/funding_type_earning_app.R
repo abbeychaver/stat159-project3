@@ -1,10 +1,9 @@
-# advertising scatterplots
+# earnings gap scatterplots
 
 palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
           "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
 
 library(shiny)
-library(ggplot2)
 income = read.csv("../data/Income.csv")
 
 ui <- fluidPage(
@@ -13,17 +12,20 @@ ui <- fluidPage(
   headerPanel('Earnings Gap VS School Funding'),
   sidebarPanel(
 
+    width = 5,
     # Dropdown for user to select which school type to plot
     selectInput('school_type', 'School Type', c("Public" = 1, "Private Nonprofit" = 2, "Private For-Profit" = 3))
   ),
   sidebarPanel(
 
+    width = 5,
     # Dropdown for user to select which earnings gap between income levels to use as y variable
-    selectInput('gap_earnings', 'Gap in Earnings Between', c("Highest and Lowest Terciles" = "gap_earnings_high_low", "Highest and Middle Terciles" = "gap_earnings_high_mid", "Middle and Lowest Terciles" = "gap_earnings_mid_low"))
+    selectInput('gap_earnings', 'Gap in Earnings Between', c("Highest and Lowest Income Terciles" = "gap_earnings_high_low", "Highest and Middle Income Terciles" = "gap_earnings_high_mid", "Middle and Lowest Income Terciles" = "gap_earnings_mid_low"))
   ),
 
   # Adds panel that shows the plotted output
   mainPanel(
+    width = 10,
     plotOutput('plotAll')
   )
 )
