@@ -1,3 +1,4 @@
+# Variables 
 school = data/school_data.csv
 funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
