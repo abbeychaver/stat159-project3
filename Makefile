@@ -3,7 +3,7 @@ funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
 income = data/Income.csv
 
-.PHONY: all data eda premodel ols
+.PHONY: all data eda premodel ols session
 
 all: eda
 
@@ -24,6 +24,9 @@ shiny-earnings:
 
 shiny-completion:
 	Rscript -e "library(shiny); runApp('shiny/funding_type_completion_app.R', launch.browser = TRUE)"
+
+session:
+	bash session.sh
 
 
 
