@@ -3,9 +3,9 @@ funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
 income = data/Income.csv
 
-.PHONY: all data eda premodel ols session
+.PHONY: all data eda premodel ols session clean
 
-all: eda
+all: eda premodel
 
 data:
 	curl -o $(school) https://ed-public-download.apps.cloud.gov/downloads/Most-Recent-Cohorts-All-Data-Elements.csv
@@ -27,6 +27,9 @@ shiny-completion:
 
 session:
 	bash session.sh
+
+clean:
+	rm -f report/report.pdf report/report.Rnw
 
 
 

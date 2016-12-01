@@ -9,7 +9,7 @@ income = read.csv("../data/Income.csv")
 ui <- fluidPage(
 
   # Title for the page
-  headerPanel('Earnings Gap VS School Funding'),
+  headerPanel('Earnings Gap VS School Student Funding'),
   sidebarPanel(
 
     width = 5,

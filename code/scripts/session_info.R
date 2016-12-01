@@ -7,7 +7,7 @@ library(pander)
 library(shiny)
 library(testthat)
 
-sink("../../session_info.txt", append = TRUE)
+sink("../../session-info.txt", append = TRUE)
 cat("Session Information\n\n")
 print(sessionInfo())
 devtools::session_info()

@@ -1,5 +1,5 @@
 # output file
-info=session_info.txt
+info=session-info.txt
 
 # Record Session Information
 echo "Session Info" > $info

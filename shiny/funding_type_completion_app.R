@@ -11,7 +11,7 @@ completion_w_h = read.csv("../data/Completion_W_H.csv")
 ui <- fluidPage(
 
   # Title for the page
-  headerPanel('Completion Rate Gap VS School Funding'),
+  headerPanel('Completion Rate Gap VS School Student Funding'),
   sidebarPanel(
 
     width = 5,
