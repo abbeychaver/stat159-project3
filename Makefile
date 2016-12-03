@@ -4,7 +4,7 @@ funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
 income = data/Income.csv
 
-.PHONY: all data eda premodel ols session clean
+.PHONY: all data eda premodel anova ols session clean
 
 all: eda premodel
 
@@ -16,6 +16,9 @@ eda: $(school) $(funcs)
 
 premodel: data/combined_data.csv
 	Rscript code/scripts/premodeling.R
+
+anova: code/scripts/anova.R data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
+	Rscript code/scripts/anova.R
 
 ols: code/scripts/ols-second-model.R data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
 				cd code/scripts; Rscript ols-second-model.R
