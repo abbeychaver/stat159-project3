@@ -1,5 +1,4 @@
 # loading datasets
-a <- read.csv("../../data/gap_metrics_data.csv")
 cr_w_b <- read.csv("../../data/Completion_W_B.csv")
 cr_w_h <- read.csv("../../data/Completion_W_H.csv")
 cr_w_a <- read.csv("../../data/Completion_W_A.csv")
