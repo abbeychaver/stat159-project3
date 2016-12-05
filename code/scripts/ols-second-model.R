@@ -374,7 +374,7 @@ ols_mse_pft_ml <- mean(ols_regression_pft_ml$residuals^2)
 
 # Saving output to RData file
 save(ols_regression_wa, ols_regression_wb, ols_regression_wh, 
-     ols_summary_wa, ols_summary_wb, ols_summary_wb,
+     ols_summary_wa, ols_summary_wb, ols_summary_wh,
      ols_coefficients_wa,ols_coefficients_wh, ols_coefficients_wb,
      ols_mse_wa, ols_mse_wh, ols_mse_wb, 
      ols_regression_pbc_wa, ols_regression_pbc_wb, ols_regression_pbc_wh,
