@@ -27,5 +27,92 @@ for (i in 1:length(cols)) {
 
 # Create new dataframe with relevant columns
 
-#data = school_data[, c(4, 17, cols)]
-write.csv(data, file = "data/combined_data.csv")
+combined_data = school_data[, c(4, 17, cols)]
+write.csv(combined_data, file = "data/combined_data.csv")
+
+
+####################################
+# Exploring Relationships
+####################################
+
+completion_W_A <- read.csv("data/Completion_W_A.csv")
+completion_W_B <- read.csv("data/Completion_W_B.csv")
+completion_W_H <- na.omit(read.csv("data/Completion_W_H.csv"))
+income_gap <- read.csv("data/Income.csv")
+
+df <- merge(completion_W_B[ , c("X", "INSTNM", "gap_completion_white_black")], 
+            completion_W_H[ , c("X", "gap_completion_white_hispanic")], 
+            by="X",  all= TRUE)
+df <- merge(df, completion_W_A[, c("X", "gap_completion_white_asian")], 
+            by="X",  all.x = TRUE)
+df <- merge(df, income_gap[ , c("X", "gap_earnings_high_low",
+                                "gap_earnings_high_mid", "gap_earnings_mid_low")], 
+            by="X",  all = TRUE)
+df <- merge(df, combined_data[, c("INSTNM", "INEXPFTE", "CONTROL")], 
+            by = "INSTNM")
+df$X <- as.numeric(df$X)
+
+control.code <- c("Public" = 1, "Non-Profit Private"=2, "For-Profit Private"=3)
+df$TYPE <- names(control.code)[match(df$CONTROL, control.code)]
+
+
+CSU_names <- c("California State University-Bakersfield",
+               "California State University-Stanislaus",
+               "California State University-San Bernardino",
+               "California State Polytechnic University-Pomona",
+               "California State University-Chico",
+               "California State University-Dominguez Hills",
+               "California State University-Fresno",
+               "California State University-Fullerton",
+               "California State University-East Bay",
+               "California State University-Long Beach",
+               "California State University-Los Angeles",
+               "California State University-Northridge",
+               "California State University-Sacramento")
+
+CSU <- df[df$INSTNM %in% CSU_names, ]
+CSU$cohort = "CSU"
+
+UC_names <- c("University of California-Berkeley",
+              "University of California-Davis",
+              "University of California-Irvine",
+              "University of California-Los Angeles",
+              "University of California-Riverside",
+              "University of California-San Diego",
+              "University of California-San Francisco",
+              "University of California-Santa Barbara",
+              "University of California-Santa Cruz")
+
+UC <- df[df$INSTNM %in% UC_names, ]
+UC$cohort = "UC"
+
+elite_private_names <- c("Harvard", "Yale", "Princeton", "Brown", "Cornell", "Duke", 
+                         "University of Pennsylvania", "Dartmouth", "Stanford", 
+                         "Massachusetts Institute of Technology")
+elite <- df[df$INSTNM %in% elite_private_names,]
+elite$cohort = "Elite Private"
+
+INEXPFTE <- combined_data$INEXPFTE
+
+high_exp_names <- head(combined_data[
+  sort.list(INEXPFTE, decreasing = TRUE), ]$INSTNM,
+  n = 40)
+
+high_exp<- df[df$INSTNM %in% high_exp_names, ]
+high_exp$cohort = "Highest Expenditure"
+
+low_exp_names <- head(combined_data[
+  sort.list(INEXPFTE), ]$INSTNM, n = 40)
+
+cohort_comparison <- rbind(CSU, UC, elite, high_exp)
+
+source("code/functions/eda_functions.R")
+gap_metrics = c("gap_completion_white_black", "gap_completion_white_hispanic",
+                "gap_completion_white_asian",  "gap_earnings_high_low",
+                "gap_earnings_high_mid", "gap_earnings_mid_low")
+for (g in gap_metrics) {
+  cohort_plot(g, cohort_comparison)
+  all_plot(g, df)
+  zoom_plot(g, df)
+}
+

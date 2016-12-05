@@ -1,0 +1,12 @@
+
+% !Rnw root = report.Rnw
+
+\section{Conclusion}
+
+In this report, we investigate outcome gaps in higher education with a particular focus on the relationship with school expenditures. While the significance of our results varied, we did find some significant patterns confirming a relationship. Our most notable conclusion is that there is a strong negative linear relationship between school expenditures per student and the post-graduation earnings gap between students of high-income backgrounds and low-income backgrouds. We see visually that at around $15,000 per year, the income gaps reach their ideal point, which is clustered evenly around zero. 
+
+It is somewhat irresponsible to draw causal conclusions from this observed pattern. However, it is notable that compared to many other variables, instructional expenditure per student stands out as the most important variable of many in our random forest models. While school expenditure cannot tell the whole story, there is compelling evidence that there is a relationship between the resources devoted to education and reduced educational inequality. 
+
+One counterargument is that underrepresented students who are better prepared for college attend better schools, which tend to have more resources to spend on students. This is entirely possible. However, we would point out that in the random forest analysis, Admission Rate, a good proxy for school prestige, was consistently a less important factor than instructional expenditure and most of the statistics regarding student body racial diversity. Additionally, for the random forests cohorted by income, Median Household Income is a very important variable. As we are not being too shy about our political perspective, we note that this is consistent with the theory that the outcomes of underrepresented students are affected by a lack of racial and economic diversity, and by the amount of resources that their school can offer them.
+
+While we are approaching this topic with something of an agenda, we have been careful to acknowledge results which are insignificant or inconsistent with our hypothesis. Overall, though, we find that there is evidence supporting our hypothesis that per-student expenditure is related to outcome gaps. The less significant difference between types of schools suggests that school organization is less important than resources, which should be relevant to those interested in decreasing educational inequality.

@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\title{Outcome Gaps in Higher Education}
+\author{Xiaoqian Zhu, Shirley Jin, Tina Huang, Abigail Chaver}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+<<completion rate black white students anova, echo=False, results = tex, fig.pos=H>>=
+library(xtable)
+load(file = "../data/anova.RData")
+load(file = "../data/second-model.RData")
+library(knitr)
+opts_chunk$set(fig.pos='H')
+@
+
+\SweaveInput{Abstract.Rnw}
+
+\SweaveInput{Introduction.Rnw}
+
+\SweaveInput{Data.Rnw}
+
+\SweaveInput{eda.Rnw}
+
+\SweaveInput{anova.Rnw}
+
+\SweaveInput{second-model.Rnw}
+
+\newpage
+
+\SweaveInput{random_forest.Rnw}
+
+
+\end{document}

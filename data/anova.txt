@@ -1,0 +1,125 @@
+
+Anova Summary of Completion Rate of White and Black Students
+                 Df Sum Sq Mean Sq F value Pr(>F)  
+cr_w_b$CONTROL    2    1.4  0.6906   3.652 0.0261 *
+Residuals      1938  366.4  0.1891                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+TukeyHSD of Completion Rate of White and Black Students
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = cr_w_b$gap_completion_white_black ~ cr_w_b$CONTROL)
+
+$`cr_w_b$CONTROL`
+           diff         lwr          upr     p adj
+2-1 -0.02402725 -0.07727375  0.029219257 0.5401191
+3-1 -0.07612990 -0.14263026 -0.009629545 0.0199928
+3-2 -0.05210265 -0.11342962  0.009224312 0.1142434
+
+
+Anova Summary of Completion Rate of White and Asian Students
+                 Df Sum Sq Mean Sq F value Pr(>F)    
+cr_w_a$CONTROL    2   29.7  14.865   44.35 <2e-16 ***
+Residuals      1560  522.8   0.335                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+271 observations deleted due to missingness
+
+TukeyHSD of Completion Rate of White and Asian Students
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = cr_w_a$gap_completion_white_asian ~ cr_w_a$CONTROL)
+
+$`cr_w_a$CONTROL`
+           diff        lwr         upr    p adj
+2-1 -0.02963885 -0.1056282  0.04635052 0.630872
+3-1 -0.39044567 -0.4937256 -0.28716578 0.000000
+3-2 -0.36080682 -0.4595296 -0.26208407 0.000000
+
+
+Anova Summary of Completion Rate of White and Hispanic Students
+                 Df Sum Sq Mean Sq F value   Pr(>F)    
+cr_w_h$CONTROL    2   13.4   6.711   26.08 6.74e-12 ***
+Residuals      1887  485.6   0.257                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+204 observations deleted due to missingness
+
+TukeyHSD of Completion Rate of White and Hispanic Students
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = cr_w_h$gap_completion_white_hispanic ~ cr_w_h$CONTROL)
+
+$`cr_w_h$CONTROL`
+           diff         lwr         upr     p adj
+2-1 -0.01598078 -0.07822892  0.04626737 0.8189428
+3-1 -0.22573216 -0.30576776 -0.14569657 0.0000000
+3-2 -0.20975138 -0.28416287 -0.13533990 0.0000000
+
+
+Anova Summary of Earnings of High and Low Income Groups
+                       Df Sum Sq Mean Sq F value Pr(>F)    
+income_rates$CONTROL    2   6.02  3.0106   196.9 <2e-16 ***
+Residuals            3364  51.43  0.0153                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+4336 observations deleted due to missingness
+
+TukeyHSD of Earnings of High and Low Income Groups
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = income_rates$gap_earnings_high_low ~ income_rates$CONTROL)
+
+$`income_rates$CONTROL`
+           diff         lwr         upr p adj
+2-1 -0.03067917 -0.04308692 -0.01827142     0
+3-1  0.07078987  0.05883918  0.08274056     0
+3-2  0.10146904  0.08902711  0.11391097     0
+
+
+Anova Summary of Earnings of High and Mid Income Groups
+                       Df Sum Sq Mean Sq F value Pr(>F)   
+income_rates$CONTROL    2  0.068 0.03398   4.899 0.0075 **
+Residuals            3364 23.329 0.00693                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+4336 observations deleted due to missingness
+
+TukeyHSD of Earnings of High and Mid Income Groups
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = income_rates$gap_earnings_high_mid ~ income_rates$CONTROL)
+
+$`income_rates$CONTROL`
+            diff          lwr         upr     p adj
+2-1 -0.006072628 -0.014429653 0.002284397 0.2038699
+3-1  0.005114743 -0.002934438 0.013163923 0.2958583
+3-2  0.011187370  0.002807323 0.019567417 0.0050102
+
+
+Anova Summary of Earnings of Mid and Low Income Groups
+                       Df Sum Sq Mean Sq F value  Pr(>F)   
+income_rates$CONTROL    2   0.14 0.07141   6.691 0.00126 **
+Residuals            3364  35.90 0.01067                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+4336 observations deleted due to missingness
+
+TukeyHSD of Earnings of Mid and Low Income Groups
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = income_rates$gap_earnings_mid_low ~ income_rates$CONTROL)
+
+$`income_rates$CONTROL`
+            diff          lwr          upr     p adj
+2-1  0.002255622 -0.008111583  0.012622827 0.8664064
+3-1 -0.012503623 -0.022488936 -0.002518310 0.0093770
+3-2 -0.014759245 -0.025155010 -0.004363481 0.0025372
+

@@ -1,22 +1,10 @@
-\documentclass{article}
+% !Rnw root = report.Rnw
 
-%% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-
-\title{Second Model: Simple Regression Analysis}
-\author{Xiaoqian Zhu}
-\date{\today}
-
-\begin{document}
-\maketitle
-
-
-\section{Introduction}
+\section{Correlation Analysis on Expenditure per Student}
 
 We are trying to find the relationship between the gap metrics, including the completion gap and income gap,  and school revenue per student, to see whether the school revenue per student has a negative correlation with the gap metrics. 
 
-\section{Methodology}
+\subsection{Methodology}
 
 We start our analysis by setting up null and alternative hypothesis. The null hypothesis is, $H_{0}$, that there is no relationship between gap metrics and school revenue per student; the alternative hypothesis is, $H_{1}$, that there is a relationship between gap metrics and school revenue per student. These are equal to the following that $H_{0}: \beta_1 = 0$ and $H_{0}: \beta_1 \neg 0$. To test the hypothesis, we apply a simple regression model like $Gapterms= \beta_0 + \beta_1 TUITFTE$. For both completion gap and income gap, we have three pairs of groups due to three race groups we have, thus we also have three regressions for each gap metric. In this case, we will use the least squares model on our data for the regression analysis. 
 
@@ -25,25 +13,26 @@ Before we apply the simple model, we do some graphs to see whether the data show
 For completion gap, the linear model gives an almost straight fitted line, thus we are using a simple linear model between completion gap and TUITFTE; while for income gap, it turns out that it is better to use a linear-log model for this data set. Bellow shows the scatter plots with fitted lines of each model chosen.
 
 
-\section{Results}
+\subsection{Results}
 
 Running regression through R, we can compute get the estimated coefficients. The regression coefficients for completion gap is given in the tables below:
 
 <<setup of tables, echo = FALSE>>=
 library(xtable)
-load('../data/second-model.RData')
+load(file='../data/second-model.RData')
 library("xtable")
 @
 
-<<tables1, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
-table1 <- xtable(ols_summary_wa,caption = 'Information about Regression Coefficents of white and asian',digits = 2)
+<<tables1, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
+load(file='../data/second-model.RData')
+table1 <- xtable(ols_summary_wa, caption = 'Information about Regression Coefficents of white and asian',digits = 2)
 
 row.names(table1) <- c('(Intercept)','TUTFTE')
 
 print(table1, caption.placement = 'top',comment = getOption("xtable.comment", FALSE))
 @
 
-<<tables2, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<tables2, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 table2 <- xtable(ols_summary_wb,caption = 'Information about Regression Coefficents of white and black',digits = 2)
 
 row.names(table2) <- c('(Intercept)','TUTFTE')
@@ -51,8 +40,9 @@ row.names(table2) <- c('(Intercept)','TUTFTE')
 print(table2, caption.placement = 'top',comment = getOption("xtable.comment", FALSE))
 @
 
-<<tables3, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
-table3 <- xtable(ols_summary_wh,caption = 'Information about Regression Coefficents of white and hispanic',digits = 2)
+<<tables3, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
+load(file='../data/second-model.RData')
+table3 <- xtable(ols_summary_wh, caption = 'Information about Regression Coefficents of white and hispanic',digits = 2)
 
 row.names(table3) <- c('(Intercept)','TUTFTE')
 
@@ -61,7 +51,7 @@ print(table3, caption.placement = 'top',comment = getOption("xtable.comment", FA
 
 More information about the least squares model from the regression analysis is given in the table below:
 
-<<table4, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<table4, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 Quantity <- c('RSSwa', 'R2wa', 'F-statwa','RSSwb', 'R2wb', 'F-statwb','RSSwc', 'R2wc', 'F-statwc')
 Value <- c(ols_summary_wa$sigma, ols_summary_wa$adj.r.squared, ols_summary_wa$fstatistic[1],ols_summary_wb$sigma, ols_summary_wb$adj.r.squared, ols_summary_wb$fstatistic[1],ols_summary_wh$sigma, ols_summary_wh$adj.r.squared, ols_summary_wh$fstatistic[1])
 
@@ -75,7 +65,7 @@ print(table4, caption.placement = 'top', comment = getOption("xtable.comment", F
 OLS regression summary statistics shows that there is statistically significant relationship between completion gap between white and asian and that between white and hispanic with school revenue per student. However, the completion gap between white and black has a statistically significant negative relationship with the school revenue per student and also has a really high F-statistics `r   `, while this model has a quite low R-squared value with `r `,  showing that we omits other necessary factors in this analysis. 
 
 
-<<tables5, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<tables5, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 table5 <- xtable(ols_summary_hl,caption = 'Information about Regression Coefficents of high and low',digits = 2)
 
 row.names(table5) <- c('(Intercept)','TUITFTE')
@@ -83,7 +73,7 @@ row.names(table5) <- c('(Intercept)','TUITFTE')
 print(table5, caption.placement = 'top',comment = getOption("xtable.comment", FALSE))
 @
 
-<<tables6, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<tables6, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 table6 <- xtable(ols_summary_hm,caption = 'Information about Regression Coefficents of high and middle',digits = 2)
 
 row.names(table6) <- c('(Intercept)','TUITFTE')
@@ -91,7 +81,7 @@ row.names(table6) <- c('(Intercept)','TUITFTE')
 print(table6, caption.placement = 'top',comment = getOption("xtable.comment", FALSE))
 @
 
-<<tables7, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<tables7, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 table7 <- xtable(ols_summary_ml,caption = 'Information about Regression Coefficents of middle and low',digits = 2)
 
 row.names(table7) <- c('(Intercept)','TUITFTE')
@@ -101,7 +91,7 @@ print(table7, caption.placement = 'top',comment = getOption("xtable.comment", FA
 
 More information about the least squares model from the regression analysis is given in the table below:
 
-<<table8, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<table8, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 Quantity2 <- c('RSShl', 'R2hl', 'F-stathl','RSShm', 'R2hm', 'F-stathm','RSSml', 'R2ml', 'F-statml')
 Value2 <- c(ols_summary_hl$sigma, ols_summary_hl$adj.r.squared, ols_summary_hl$fstatistic[1],ols_summary_hm$sigma, ols_summary_hm$adj.r.squared, ols_summary_hm$fstatistic[1],ols_summary_ml$sigma, ols_summary_ml$adj.r.squared, ols_summary_ml$fstatistic[1])
 
@@ -115,13 +105,10 @@ print(table8, caption.placement = 'top', comment = getOption("xtable.comment", F
 OLS regression summary statistics shows that there is statistically significant negative relationship between income gap and the school revenue per student for each pair of income group, including high-low, high-middle and middle-low. To be noticed that all three regressions have very high F-statistics: `r `, showing reliability, while low R-squared value. This is reasonable that we here only have a very simple model. Additionally, we are using linear-log model for income gap, thus one percentage change in school revenue per student would result in unit change in income gap. 
 
 
-
-
-
 The above regressions shows that there do exist a negative relationship between completion rates gap and income gap of different race groups with the school revenue per student. Then, we would like to make a data-based argument that increasing funding for public schools can decrease the gap metric. To do this, we will model the gap metrics as a function of school revenue split by public and private schools. In other words, we first split the dataset by type of school, including public and private, and then run a linear model: $Gapterms= \beta_0 + \beta_1 INEXPFTE$, and then compare slopes and intercepts between public and private schools. INEXPFTE stands for  instructional expenditures per full-time student. 
 
 
-<<table9, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<table9, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 Quantity3 <- c('PublicwaIntc', 'PrivatewaIntc','PublicwbIntc', 'PrivatewbIntc', 'PublicwhIntc', 'PrivatewhIntc')
 Value3 <- c(ols_coefficients_pbc_wa[1], ols_coefficients_pvt_wa[1], ols_coefficients_pbc_wb[1], ols_coefficients_pvt_wb[1], ols_coefficients_pbc_wh[1], ols_coefficients_pvt_wh[1])
 
@@ -132,7 +119,7 @@ table9 <- xtable(results9, caption = 'Completion Gap Interception comparsion')
 print(table9, caption.placement = 'top', comment = getOption("xtable.comment", FALSE))
 @
 
-<<table10, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<table10, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 Quantity4 <- c('PublicwaIntc', 'PrivatewaIntc','PublicwbIntc', 'PrivatewbIntc', 'PublicwhIntc', 'PrivatewhIntc')
 Value4 <- c(ols_coefficients_pbc_wa[2], ols_coefficients_pvt_wa[2], ols_coefficients_pbc_wb[2], ols_coefficients_pvt_wb[2], ols_coefficients_pbc_wh[2], ols_coefficients_pvt_wh[2])
 
@@ -143,7 +130,7 @@ table10 <- xtable(results10, caption = 'Completion Gap Slope comparsion')
 print(table10, caption.placement = 'top', comment = getOption("xtable.comment", FALSE))
 @
 
-<<table11, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<table11, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 Quantity5 <- c('PublichlIntc', 'PrivatehlIntc','PublichmIntc', 'PrivatehmIntc', 'PublicmlIntc', 'PrivatemlIntc')
 Value5 <- c(ols_coefficients_pbc_hl[1], ols_coefficients_pvt_hl[1], ols_coefficients_pbc_hm[1], ols_coefficients_pvt_hm[1], ols_coefficients_pbc_ml[1], ols_coefficients_pvt_ml[1])
 
@@ -154,7 +141,7 @@ table11 <- xtable(results11, caption = 'Income Gap Interception comparsion')
 print(table11, caption.placement = 'top', comment = getOption("xtable.comment", FALSE))
 @
 
-<<table12, fig.width=4, fig.height=4, echo = FALSE, results= 'asis'>>=
+<<table12, fig.width=4, fig.height=4, echo = FALSE, results= tex, fig.pos=H>>=
 Quantity6 <- c('PublichlIntc', 'PrivatehlIntc','PublichmIntc', 'PrivatehmIntc', 'PublicmlIntc', 'PrivatemlIntc')
 Value6 <- c(ols_coefficients_pbc_hl[2], ols_coefficients_pvt_hl[2], ols_coefficients_pbc_hm[2], ols_coefficients_pvt_hm[2], ols_coefficients_pbc_ml[2], ols_coefficients_pvt_ml[2])
 
@@ -165,7 +152,7 @@ table12 <- xtable(results12, caption = 'Income Gap Slope comparsion')
 print(table12, caption.placement = 'top', comment = getOption("xtable.comment", FALSE))
 @
 
-For completion rate gap, the private school turns to have smaller interception in three pairs of race groups. This proves our argument that private schools, which assume to have more funding for instruction, have smaller completion rate gap. Similarily, for income gap, the private school also shows better standing in the interception in three pairs of income groups. However, for slopes, white-asian group has a bigger slope, while white-black group has a less steep slope, which might imply that increasing in instruction funding would lead to reduction in completion rate gap, while the efficiency depending on the race group. For income gap, we can also see that higher efficiency in high-lower group. 
+For completion rate gap, the private school turns to have smaller interception in three pairs of race groups. This proves our argument that private schools, which often have more funding for instruction, have a smaller completion rate gap. Similarily, for income gap, the private school also shows better standing in the interception in three pairs of income groups. However, for slopes, white-asian group has a bigger slope, while white-black group has a less steep slope, which might imply that increasing in instruction funding would lead to reduction in completion rate gap, while the efficiency depending on the race group. For income gap, we can also see that higher efficiency in high-lower group. 
 
 I also ran regressions for nonprofit private schools and profit private schools.......................Further proves our argument...........
 
@@ -173,10 +160,3 @@ Summary of second model:
 1. Negative relationship between gap metrics and school revenue.
 2. More school funding, smaller gap. 
 
-
-
-
-
-
-
-\end{document}

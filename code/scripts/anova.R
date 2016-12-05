@@ -46,24 +46,29 @@ plot(tukey_cr_wb, yaxt="n")
 axis(2, at=1:3, las=2,cex.axis=0.6, labels=c("Private For-Profit : Private Non-Profit", "Private For-Profit : Public", "Private Non-Profit : Public"))
 dev.off()
 
-png('../../images/completion_rate_tukeyplot_white_black.png')
-plot(tukey_cr_wa)
+png('../../images/completion_rate_tukeyplot_white_asian.png')
+plot(tukey_cr_wa, yaxt="n")
+axis(2, at=1:3, las=2,cex.axis=0.6, labels=c("Private For-Profit : Private Non-Profit", "Private For-Profit : Public", "Private Non-Profit : Public"))
 dev.off()
 
-png('../../images/completion_rate_tukeyplot_white_black.png')
-plot(tukey_cr_wh)
-dev.off()
-
-png('../../images/earnings_tukeyplot_high_low.png')
-plot(tukey_e_hl)
-dev.off()
-
-png('../../images/earnings_tukeyplot_high_low.png')
-plot(tukey_e_hm)
+png('../../images/completion_rate_tukeyplot_white_hispanics.png')
+plot(tukey_cr_wh, yaxt="n")
+axis(2, at=1:3, las=2,cex.axis=0.6, labels=c("Private For-Profit : Private Non-Profit", "Private For-Profit : Public", "Private Non-Profit : Public"))
 dev.off()
 
 png('../../images/earnings_tukeyplot_high_low.png')
-plot(tukey_e_ml)
+plot(tukey_e_hl,yaxt="n")
+axis(2, at=1:3, las=2,cex.axis=0.6, labels=c("Private For-Profit : Private Non-Profit", "Private For-Profit : Public", "Private Non-Profit : Public"))
+dev.off()
+
+png('../../images/earnings_tukeyplot_high_mid.png')
+plot(tukey_e_hm,yaxt="n")
+axis(2, at=1:3, las=2,cex.axis=0.6, labels=c("Private For-Profit : Private Non-Profit", "Private For-Profit : Public", "Private Non-Profit : Public"))
+dev.off()
+
+png('../../images/earnings_tukeyplot_mid_low.png')
+plot(tukey_e_ml,yaxt="n")
+axis(2, at=1:3, las=2,cex.axis=0.6, labels=c("Private For-Profit : Private Non-Profit", "Private For-Profit : Public", "Private Non-Profit : Public"))
 dev.off()
 
 # Saving output to RData file
