@@ -15,11 +15,10 @@
 # Three regression between income gap and the instructional expenditures per full-time student (INEXPFTE) in profit private schools: linear
 
 # Loading data sets
-school_data <- read.csv("data/combined_data.csv")
-completion_W_A <- read.csv("data/Completion_W_A.csv")
-completion_W_B <- read.csv("data/Completion_W_B.csv")
-completion_W_H <- read.csv("data/Completion_W_H.csv")
-income_gap <- read.csv("data/Income.csv")
+completion_W_A <- read.csv("../../data/Completion_W_A.csv")
+completion_W_B <- read.csv("../../data/Completion_W_B.csv")
+completion_W_H <- read.csv("../../data/Completion_W_H.csv")
+income_gap <- read.csv("../../data/Income.csv")
 
 
 
@@ -417,7 +416,7 @@ save(ols_regression_wa, ols_regression_wb, ols_regression_wh,
      file="../../data/second-model.RData")
 
 # Sinking output to txt file
-sink('data/second-model-output.txt')
+sink('../../data/second-model-output.txt')
 cat('\nOLS regression summary statistics between white and asian\n')
 print(ols_summary_wa)
 cat('\nOLS MSE between white and asian\n')
