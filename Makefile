@@ -35,7 +35,7 @@ shiny-completion:
 session:
 	bash session.sh
 report: 
-	cd reports; R CMD Sweave --pdf report.Rnw; cd ..
+	cd reports; R CMD Sweave --pdf report.Rnw; rm report-concordance.tex; rm report.aux; rm report.log; rm report.out; rm report.tex; cd ..
 slides:
 	Rscript -e "rmarkdown::render('slides/slides.Rmd')"
 
