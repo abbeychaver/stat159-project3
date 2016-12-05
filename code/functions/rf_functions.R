@@ -1,10 +1,13 @@
-#---------------------------------------------------------------------
+####################################################
 # Random Forest Functions
-
+###################################################
 # Description: Functions for running a random forest on given data.
-#---------------------------------------------------------------------
 
-library(stringr)
+
+
+# Takes the name of the variable as a string and complete dataframe as arguments
+# Plots the error as a function of the number of trees
+# Returns the random forest output
 run_rf <- function(var_string, full) {
   explanatory <- c(var_string, "SCH_DEG", "PREDDEG", "REGION", "LOCALE",
                    "ADM_RATE", "UGDS_WHITE", "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN",
@@ -22,10 +25,6 @@ run_rf <- function(var_string, full) {
   png(paste("images/rf_trees", var_string, ".png", sep="" ))
   plot(rf)
   dev.off()
-  sink(paste("data/rf", var_string, sep="" ))
-  rf
-  as.matrix(rf$importance)
-  sink()
   print(rf)
   return(rf)
 }

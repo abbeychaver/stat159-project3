@@ -35,26 +35,27 @@ lm(formula = completion_W_B$gap_completion_white_black ~ completion_W_B$TUITFTE)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--5.8632 -0.1412  0.0348  0.2225  0.6562 
+-5.8632 -0.1366  0.0348  0.2226  0.6563 
 
 Coefficients:
                          Estimate Std. Error t value Pr(>|t|)    
-(Intercept)             2.849e-01  2.126e-02  13.399  < 2e-16 ***
-completion_W_B$TUITFTE -6.139e-06  1.439e-06  -4.266 2.09e-05 ***
+(Intercept)             2.841e-01  2.171e-02  13.087  < 2e-16 ***
+completion_W_B$TUITFTE -6.079e-06  1.474e-06  -4.125 3.87e-05 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.4335 on 1939 degrees of freedom
-Multiple R-squared:  0.009297,	Adjusted R-squared:  0.008787 
-F-statistic:  18.2 on 1 and 1939 DF,  p-value: 2.088e-05
+Residual standard error: 0.4359 on 1902 degrees of freedom
+  (200 observations deleted due to missingness)
+Multiple R-squared:  0.008866,	Adjusted R-squared:  0.008345 
+F-statistic: 17.01 on 1 and 1902 DF,  p-value: 3.871e-05
 
 
 OLS MSE between white and black
-[1] 0.1877377
+[1] 0.1898156
 
 OLS regression coefficients between white and asian
            (Intercept) completion_W_B$TUITFTE 
-          2.848886e-01          -6.138912e-06 
+          2.840910e-01          -6.078858e-06 
 
 OLS regression summary statistics between white and hispanic
 
@@ -121,26 +122,27 @@ lm(formula = public_school_wb$gap_completion_white_black ~ public_school_wb$INEX
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--3.7498 -0.1266  0.0258  0.1783  0.6163 
+-3.7486 -0.1224  0.0263  0.1791  0.6168 
 
 Coefficients:
                             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                3.244e-01  3.686e-02   8.802  < 2e-16 ***
-public_school_wb$INEXPFTE -1.056e-05  3.828e-06  -2.758  0.00599 ** 
+(Intercept)                3.221e-01  3.716e-02   8.670  < 2e-16 ***
+public_school_wb$INEXPFTE -1.045e-05  3.848e-06  -2.715  0.00682 ** 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.3664 on 593 degrees of freedom
-Multiple R-squared:  0.01267,	Adjusted R-squared:  0.011 
-F-statistic: 7.607 on 1 and 593 DF,  p-value: 0.005994
+Residual standard error: 0.3673 on 583 degrees of freedom
+  (200 observations deleted due to missingness)
+Multiple R-squared:  0.01249,	Adjusted R-squared:  0.01079 
+F-statistic: 7.372 on 1 and 583 DF,  p-value: 0.006822
 
 
 OLS MSE between white and black in public school
-[1] 0.1337976
+[1] 0.1344807
 
 OLS regression coefficients between white and asian in public school
               (Intercept) public_school_wb$INEXPFTE 
-             3.244215e-01             -1.055742e-05 
+             3.221400e-01             -1.044669e-05 
 
 OLS regression summary statistics between white and hispanic in private school
 
@@ -208,26 +210,27 @@ lm(formula = private_school_wb$gap_completion_white_black ~ private_school_wb$IN
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--5.8794 -0.1406  0.0504  0.2310  0.6763 
+-5.8813 -0.1394  0.0501  0.2318  0.6761 
 
 Coefficients:
                              Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                 2.242e-01  1.780e-02  12.595   <2e-16 ***
-private_school_wb$INEXPFTE -3.468e-06  1.381e-06  -2.511   0.0121 *  
+(Intercept)                 2.269e-01  1.842e-02  12.317   <2e-16 ***
+private_school_wb$INEXPFTE -3.705e-06  1.466e-06  -2.527   0.0116 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.4607 on 1344 degrees of freedom
-Multiple R-squared:  0.00467,	Adjusted R-squared:  0.00393 
-F-statistic: 6.306 on 1 and 1344 DF,  p-value: 0.01215
+Residual standard error: 0.4636 on 1317 degrees of freedom
+  (200 observations deleted due to missingness)
+Multiple R-squared:  0.004827,	Adjusted R-squared:  0.004071 
+F-statistic: 6.388 on 1 and 1317 DF,  p-value: 0.01161
 
 
 OLS MSE between white and black in private school
-[1] 0.2119014
+[1] 0.2145983
 
 OLS regression coefficients between white and asian in private school
                (Intercept) private_school_wb$INEXPFTE 
-              2.241827e-01              -3.468395e-06 
+              2.268615e-01              -3.704653e-06 
 
 OLS regression summary statistics between white and hispanic in private school
 
@@ -325,26 +328,27 @@ lm(formula = private_nonpft_wb$gap_completion_white_black ~ private_nonpft_wb$IN
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--5.2171 -0.1367  0.0339  0.2050  0.6540 
+-5.2173 -0.1361  0.0355  0.2065  0.6544 
 
 Coefficients:
                              Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                 2.611e-01  2.013e-02  12.974  < 2e-16 ***
-private_nonpft_wb$INEXPFTE -4.860e-06  1.351e-06  -3.598 0.000337 ***
+(Intercept)                 2.640e-01  2.077e-02  12.709  < 2e-16 ***
+private_nonpft_wb$INEXPFTE -5.164e-06  1.435e-06  -3.599 0.000336 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.4191 on 955 degrees of freedom
-Multiple R-squared:  0.01338,	Adjusted R-squared:  0.01234 
-F-statistic: 12.95 on 1 and 955 DF,  p-value: 0.0003369
+Residual standard error: 0.4204 on 942 degrees of freedom
+  (200 observations deleted due to missingness)
+Multiple R-squared:  0.01357,	Adjusted R-squared:  0.01252 
+F-statistic: 12.96 on 1 and 942 DF,  p-value: 0.0003356
 
 
 OLS MSE between white and black in non-profit private school
-[1] 0.175271
+[1] 0.1763974
 
 OLS regression coefficients between white and black in non-profit private school
                (Intercept) private_nonpft_wb$INEXPFTE 
-              2.611099e-01              -4.859842e-06 
+              2.640245e-01              -5.163888e-06 
 
 OLS regression summary statistics between white and hispanic in private for profit school
 
@@ -411,26 +415,27 @@ lm(formula = private_pft_wb$gap_completion_white_black ~ private_pft_wb$INEXPFTE
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--5.8265 -0.1646  0.0570  0.3018  0.7099 
+-5.8294 -0.1647  0.0584  0.3108  0.7098 
 
 Coefficients:
                           Estimate Std. Error t value Pr(>|t|)    
-(Intercept)              1.722e-01  5.153e-02   3.341 0.000915 ***
-private_pft_wb$INEXPFTE -3.721e-06  9.658e-06  -0.385 0.700286    
+(Intercept)              1.799e-01  5.365e-02   3.353 0.000882 ***
+private_pft_wb$INEXPFTE -5.181e-06  1.023e-05  -0.507 0.612697    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.5469 on 387 degrees of freedom
-Multiple R-squared:  0.0003833,	Adjusted R-squared:  -0.0022 
-F-statistic: 0.1484 on 1 and 387 DF,  p-value: 0.7003
+Residual standard error: 0.5549 on 373 degrees of freedom
+  (200 observations deleted due to missingness)
+Multiple R-squared:  0.0006877,	Adjusted R-squared:  -0.001991 
+F-statistic: 0.2567 on 1 and 373 DF,  p-value: 0.6127
 
 
 OLS MSE between white and black in private for profit school
-[1] 0.2975684
+[1] 0.306254
 
 OLS regression coefficients between white and asian in private for profit school
             (Intercept) private_pft_wb$INEXPFTE 
-           1.721896e-01           -3.720547e-06 
+           1.798800e-01           -5.181458e-06 
 
 OLS regression summary statistics between high and low
 
@@ -449,7 +454,6 @@ log(income_gap$TUITFTE) -0.033773   0.002804  -12.05   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.1254 on 3149 degrees of freedom
-  (4552 observations deleted due to missingness)
 Multiple R-squared:  0.04405,	Adjusted R-squared:  0.04374 
 F-statistic: 145.1 on 1 and 3149 DF,  p-value: < 2.2e-16
 
@@ -478,7 +482,6 @@ log(income_gap$TUITFTE) -0.01516    0.00179  -8.466   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.08006 on 3149 degrees of freedom
-  (4552 observations deleted due to missingness)
 Multiple R-squared:  0.02226,	Adjusted R-squared:  0.02195 
 F-statistic: 71.68 on 1 and 3149 DF,  p-value: < 2.2e-16
 
@@ -497,27 +500,26 @@ lm(formula = income_gap$gap_earnings_mid_low ~ log(income_gap$TUITFTE))
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.65476 -0.04390  0.00998  0.05556  0.33191 
+-0.74267 -0.05987  0.00486  0.06716  0.30890 
 
 Coefficients:
-                         Estimate Std. Error t value Pr(>|t|)    
-(Intercept)             -0.238504   0.019816 -12.036  < 2e-16 ***
-log(income_gap$TUITFTE)  0.016761   0.002173   7.715 1.61e-14 ***
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)              0.32309    0.02162  14.945   <2e-16 ***
+log(income_gap$TUITFTE) -0.02176    0.00237  -9.183   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.09715 on 3149 degrees of freedom
-  (4552 observations deleted due to missingness)
-Multiple R-squared:  0.01855,	Adjusted R-squared:  0.01824 
-F-statistic: 59.52 on 1 and 3149 DF,  p-value: 1.611e-14
+Residual standard error: 0.106 on 3149 degrees of freedom
+Multiple R-squared:  0.02608,	Adjusted R-squared:  0.02577 
+F-statistic: 84.33 on 1 and 3149 DF,  p-value: < 2.2e-16
 
 
 OLS MSE for middle and low
-[1] 0.00943121
+[1] 0.0112242
 
 OLS regression coefficients between middle and low
             (Intercept) log(income_gap$TUITFTE) 
-             -0.2385045               0.0167612 
+             0.32309287             -0.02176451 
 
 OLS regression summary statistics between high and low in public school
 
@@ -536,7 +538,6 @@ public_school_income$INEXPFTE -9.204e-06  3.840e-07  -23.97   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.09991 on 1132 degrees of freedom
-  (910 observations deleted due to missingness)
 Multiple R-squared:  0.3367,	Adjusted R-squared:  0.3361 
 F-statistic: 574.5 on 1 and 1132 DF,  p-value: < 2.2e-16
 
@@ -565,7 +566,6 @@ public_school_income$INEXPFTE -2.505e-06  2.441e-07  -10.26   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.06351 on 1132 degrees of freedom
-  (910 observations deleted due to missingness)
 Multiple R-squared:  0.08514,	Adjusted R-squared:  0.08434 
 F-statistic: 105.4 on 1 and 1132 DF,  p-value: < 2.2e-16
 
@@ -583,28 +583,27 @@ Call:
 lm(formula = private_school_income$gap_earnings_mid_low ~ private_school_income$INEXPFTE)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--0.6429 -0.0462  0.0092  0.0702  0.3351 
+     Min       1Q   Median       3Q      Max 
+-0.60002 -0.05891  0.01069  0.06940  0.67022 
 
 Coefficients:
                                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                    -9.343e-02  3.191e-03 -29.284  < 2e-16 ***
-private_school_income$INEXPFTE  1.107e-06  2.819e-07   3.928 8.86e-05 ***
+(Intercept)                     1.734e-01  3.054e-03   56.78   <2e-16 ***
+private_school_income$INEXPFTE -5.338e-06  2.698e-07  -19.78   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1072 on 2015 degrees of freedom
-  (3642 observations deleted due to missingness)
-Multiple R-squared:  0.007599,	Adjusted R-squared:  0.007106 
-F-statistic: 15.43 on 1 and 2015 DF,  p-value: 8.855e-05
+Residual standard error: 0.1026 on 2015 degrees of freedom
+Multiple R-squared:  0.1627,	Adjusted R-squared:  0.1622 
+F-statistic: 391.4 on 1 and 2015 DF,  p-value: < 2.2e-16
 
 
 OLS MSE for middle and low in private school
-[1] 0.0114776
+[1] 0.01051525
 
 OLS regression coefficients between middle and low in private school
                    (Intercept) private_school_income$INEXPFTE 
-                 -9.343315e-02                   1.107160e-06 
+                  1.733937e-01                  -5.337577e-06 
 
 OLS regression summary statistics between high and low in private school
 
@@ -623,7 +622,6 @@ private_school_income$INEXPFTE -5.774e-06  3.195e-07  -18.07   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.1215 on 2015 degrees of freedom
-  (3642 observations deleted due to missingness)
 Multiple R-squared:  0.1395,	Adjusted R-squared:  0.1391 
 F-statistic: 326.7 on 1 and 2015 DF,  p-value: < 2.2e-16
 
@@ -652,7 +650,6 @@ private_school_income$INEXPFTE -8.834e-07  2.307e-07  -3.829 0.000133 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.08774 on 2015 degrees of freedom
-  (3642 observations deleted due to missingness)
 Multiple R-squared:  0.007223,	Adjusted R-squared:  0.00673 
 F-statistic: 14.66 on 1 and 2015 DF,  p-value: 0.0001327
 
@@ -670,28 +667,27 @@ Call:
 lm(formula = private_school_income$gap_earnings_mid_low ~ private_school_income$INEXPFTE)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--0.6429 -0.0462  0.0092  0.0702  0.3351 
+     Min       1Q   Median       3Q      Max 
+-0.60002 -0.05891  0.01069  0.06940  0.67022 
 
 Coefficients:
                                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                    -9.343e-02  3.191e-03 -29.284  < 2e-16 ***
-private_school_income$INEXPFTE  1.107e-06  2.819e-07   3.928 8.86e-05 ***
+(Intercept)                     1.734e-01  3.054e-03   56.78   <2e-16 ***
+private_school_income$INEXPFTE -5.338e-06  2.698e-07  -19.78   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1072 on 2015 degrees of freedom
-  (3642 observations deleted due to missingness)
-Multiple R-squared:  0.007599,	Adjusted R-squared:  0.007106 
-F-statistic: 15.43 on 1 and 2015 DF,  p-value: 8.855e-05
+Residual standard error: 0.1026 on 2015 degrees of freedom
+Multiple R-squared:  0.1627,	Adjusted R-squared:  0.1622 
+F-statistic: 391.4 on 1 and 2015 DF,  p-value: < 2.2e-16
 
 
 OLS MSE for middle and low in private school
-[1] 0.0114776
+[1] 0.01051525
 
 OLS regression coefficients between middle and low in private school
                    (Intercept) private_school_income$INEXPFTE 
-                 -9.343315e-02                   1.107160e-06 
+                  1.733937e-01                  -5.337577e-06 
 
 OLS regression summary statistics between high and low in non-profit private school
 
@@ -710,7 +706,6 @@ private_nonpft_income$INEXPFTE -4.396e-06  3.786e-07  -11.61   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.1301 on 958 degrees of freedom
-  (996 observations deleted due to missingness)
 Multiple R-squared:  0.1234,	Adjusted R-squared:  0.1224 
 F-statistic: 134.8 on 1 and 958 DF,  p-value: < 2.2e-16
 
@@ -739,7 +734,6 @@ private_nonpft_income$INEXPFTE -7.376e-07  2.475e-07   -2.98  0.00296 **
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.08506 on 958 degrees of freedom
-  (996 observations deleted due to missingness)
 Multiple R-squared:  0.009184,	Adjusted R-squared:  0.00815 
 F-statistic:  8.88 on 1 and 958 DF,  p-value: 0.002956
 
@@ -758,27 +752,26 @@ lm(formula = private_nonpft_income$gap_earnings_mid_low ~ private_nonpft_income$
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.64580 -0.05114  0.00383  0.06263  0.33174 
+-0.60592 -0.05727  0.00052  0.06891  0.45042 
 
 Coefficients:
                                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                    -8.903e-02  4.458e-03 -19.969   <2e-16 ***
-private_nonpft_income$INEXPFTE  8.755e-07  2.933e-07   2.985   0.0029 ** 
+(Intercept)                     1.213e-01  5.039e-03   24.08   <2e-16 ***
+private_nonpft_income$INEXPFTE -3.930e-06  3.315e-07  -11.86   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1008 on 958 degrees of freedom
-  (996 observations deleted due to missingness)
-Multiple R-squared:  0.009217,	Adjusted R-squared:  0.008183 
-F-statistic: 8.912 on 1 and 958 DF,  p-value: 0.002905
+Residual standard error: 0.1139 on 958 degrees of freedom
+Multiple R-squared:  0.1279,	Adjusted R-squared:  0.127 
+F-statistic: 140.5 on 1 and 958 DF,  p-value: < 2.2e-16
 
 
 OLS MSE between middle and low in non-profit private school
-[1] 0.01013559
+[1] 0.01294882
 
 OLS regression coefficients between middle and low in non-profit private school
                    (Intercept) private_nonpft_income$INEXPFTE 
-                 -8.902773e-02                   8.754761e-07 
+                  1.213247e-01                  -3.929555e-06 
 
 OLS regression summary statistics between high and low in profit private school
 
@@ -797,7 +790,6 @@ private_pft_income$INEXPFTE -3.656e-06  9.600e-07  -3.809 0.000148 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.1019 on 1055 degrees of freedom
-  (2646 observations deleted due to missingness)
 Multiple R-squared:  0.01356,	Adjusted R-squared:  0.01263 
 F-statistic: 14.51 on 1 and 1055 DF,  p-value: 0.0001478
 
@@ -826,7 +818,6 @@ private_pft_income$INEXPFTE -1.875e-06  8.487e-07  -2.209   0.0274 *
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.0901 on 1055 degrees of freedom
-  (2646 observations deleted due to missingness)
 Multiple R-squared:  0.004606,	Adjusted R-squared:  0.003662 
 F-statistic: 4.882 on 1 and 1055 DF,  p-value: 0.02736
 
@@ -845,24 +836,23 @@ lm(formula = private_pft_income$gap_earnings_mid_low ~ private_pft_income$INEXPF
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.41436 -0.03855  0.01466  0.07546  0.28887 
+-0.36255 -0.04086 -0.00717  0.05326  0.17794 
 
 Coefficients:
                               Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                 -1.025e-01  6.241e-03  -16.43   <2e-16 ***
-private_pft_income$INEXPFTE  2.599e-06  1.061e-06    2.45   0.0145 *  
+(Intercept)                  1.937e-01  4.140e-03  46.789  < 2e-16 ***
+private_pft_income$INEXPFTE -2.543e-06  7.038e-07  -3.613 0.000316 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1126 on 1055 degrees of freedom
-  (2646 observations deleted due to missingness)
-Multiple R-squared:  0.005656,	Adjusted R-squared:  0.004714 
-F-statistic: 6.001 on 1 and 1055 DF,  p-value: 0.01446
+Residual standard error: 0.07472 on 1055 degrees of freedom
+Multiple R-squared:  0.01223,	Adjusted R-squared:  0.01129 
+F-statistic: 13.06 on 1 and 1055 DF,  p-value: 0.0003164
 
 
 OLS MSE between middle and low in private for profit school
-[1] 0.01265982
+[1] 0.005572161
 
 OLS regression coefficients between middle and low in private for profit school
                 (Intercept) private_pft_income$INEXPFTE 
-              -1.025459e-01                2.598997e-06 
+               1.937168e-01               -2.543312e-06 

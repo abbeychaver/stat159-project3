@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Data}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Source}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Target Variables}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Explanatory Variables}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Exploratory Data Analysis}{}% 7
+\BOOKMARK [1][-]{section.5}{Anova Analysis on Type of School}{}% 8
+\BOOKMARK [1][-]{section.6}{Correlation Analysis on Expenditure per Student}{}% 9
+\BOOKMARK [2][-]{subsection.6.1}{Methodology}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.2}{Results}{section.6}% 11
+\BOOKMARK [1][-]{section.7}{Random Forest}{}% 12
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 13

@@ -6,7 +6,7 @@
 
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{wrapfig}
@@ -18,14 +18,14 @@
 \maketitle
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 \section{Abstract}
 
 In this report, we investigate "outcome gaps" in higher education - the widespread phenomenon that underrepresented students have worse outcomes than their well-represented peers. Using data from College Scorecard, a federally maintained dataset, we explore the differences between completion rates across races, and differences between post-graduation earnings across parent-income terciles.
 
 We test the hypotheses that the type of school (public, non-profit private, or for-profit private) and the instructional expenditure per full-time student are related to outcome gaps, finding statistically significant relationships in both cases. We also run a random forest regression across 14 other possible explanatory factors to provide some insight on possible interactions. The random forest model was not particularly useful as a predictor, but provided some interesting suggestions as to what circumstances correspond to worse outcome gaps.
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Introduction}
 
@@ -37,7 +37,7 @@ Since expenditures are also highly correlated with other factors - for example, 
 
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Data}
 
@@ -52,17 +52,17 @@ $$[(White Completion Rate) - (Minority Completion Rate)]/ (White Completion Rate
 For earnings gaps, we have ordered terciles, so we compute
 $$[(Higher Tercile Earnings) - (Lower Tercile Earnings)]/ (Higher Tercile Earnings)$$
 
-While computing these outcome statistics, we found inevitably that we got some were incomputable. This was particularly common with historically black schools, where the completion rate for white students was not recorded or recorded as zero. Therefore, we excluded such observations from our data set, as we are interested in cases where we can compare outcomes between white students and students of color.
+While computing these outcome statistics, we found inevitably that some were incomputable. This was particularly common with historically black schools, where the completion rate for white students was not recorded or recorded as zero. Therefore, we excluded such observations from our data set, as we are interested in cases where we can compare outcomes between white students and students of color.
 
 \subsection{Explanatory Variables}
 
-We found that College Scorecard provided two explanatory variables that were useful for our analysis, "CONTROL", a coded variable representing whether the school is under control of the government, a corporation, or a non-profit. The dataset also provided "INEXPFTE", Instructional Expenditures per Full-Time Student. This is an excellent proxy variable for a quantifier of the resources a school provides to its students.
+We found that College Scorecard provided two explanatory variables that were useful for our analysis, "CONTROL", a coded variable representing whether the school is under control of the government, a corporation, or a non-profit. The dataset also provided `INEXPFTE`, Instructional Expenditures per Full-Time Student. This is an excellent proxy variable for a quantifier of the resources a school provides to its students.
 
 In the third part of our analysis where we consider additional exploratory variables and their interactions, we used our best judgment to choose possible relevant variables. Our random forest regression uses variables related to the type of degree awarded, the region and type of location, the admission rate, the proportion of students of each of the four races considered, the median cost to attend, the median household income, and the poverty rate.
 
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Exploratory Data Analysis}
 
@@ -128,7 +128,7 @@ However, restricting bounds produces a more interesting visual insight.
 The relationship between expenditure and outcome gap is not obvious, but there definitely seem to be some non-random patterns worth investigating. In the next sections, we undertake formal statistical analysis to develop more concrete conclusions about these patterns.
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 
 \section{Anova Analysis on Type of School}
@@ -136,7 +136,7 @@ The relationship between expenditure and outcome gap is not obvious, but there d
 We want to first determine whether there is a significant outcome gap in terms of completion rate and earnings between the student groups at different types of institutions. Thus, we run an ANOVA model to assess whether there is a difference between public, private non-profit, and private school gap metrics. Let's first look at the analysis of variance of completion rates of black and white students.
 
 % latex table generated in R 3.3.2 by xtable 1.8-2 package
-% Sun Dec  4 23:19:42 2016
+% Mon Dec  5 14:03:56 2016
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrr}
@@ -151,7 +151,7 @@ cr\_w\_b\$CONTROL & 2 & 1.38 & 0.69 & 3.65 & 0.0261 \\
 \end{table}
 As indicated by the high F statistics and low p-value, there is a significant difference between public, private non-profit, and private school black and white students completion rate gap metric. If we then look further for pair-wise comparisons in the Tukey Plot displayed, we see that the outcome gap is significant between Private For-Profit and Public schools, but not so much between Private For-Profit and Private Non-Profit or Private Non-Profit and Public schools.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{../images/completion_rate_tukeyplot_white_black.png}
 \caption{\label{fig:TukeyPlot}Tukey Plot Completion Rate White and Black Students}
@@ -188,14 +188,14 @@ Looking at the earnings gap metric amongst different student income groups, we s
 \caption{Earnings P-Value Table} 
 \end{table}
 
-\begin{figure}
+\begin{figure}{H}
 \centering
 \includegraphics[width=0.8\textwidth]{../images/earnings_tukeyplot_high_low.png}
 \caption{\label{fig:TukeyPlot2}Tukey Plot Earnings High and Low Income Students}
 \end{figure}
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Correlation Analysis on Expenditure per Student}
 
@@ -219,9 +219,9 @@ Running regression through R, we can compute get the estimated coefficients. The
   \hline
  & Model & Estimate & SE & p \\ 
   \hline
-1 & Public: White-Black & -1.0557422E-05 & 3.8278855E-06 & 5.9943859E-03 \\ 
-  2 & Non-Profit Private: White-Black & -3.4683953E-06 & 1.3811428E-06 & 1.2146972E-02 \\ 
-  3 & For-Profit Private: White-Black & -3.7205466E-06 & 9.6582270E-06 & 7.0028572E-01 \\ 
+1 & Public: White-Black & -1.0446694E-05 & 3.8476020E-06 & 6.8215159E-03 \\ 
+  2 & Non-Profit Private: White-Black & -3.7046532E-06 & 1.4658166E-06 & 1.1608429E-02 \\ 
+  3 & For-Profit Private: White-Black & -5.1814583E-06 & 1.0226819E-05 & 6.1269699E-01 \\ 
   4 & Public: White-Hispanic & 6.5570747E-06 & 4.7176435E-06 & 1.6507761E-01 \\ 
   5 & Non-Profit Private: White-Hispanic & 2.7219058E-06 & 1.6211459E-06 & 9.3393803E-02 \\ 
   6 & For-Profit Private: White-Hispanic & 5.6599409E-06 & 1.2351433E-05 & 6.4706406E-01 \\ 
@@ -253,9 +253,9 @@ Many of our p-values are significant. However, we did not implement any methods 
   4 & Public: High-Mid & -2.5052138E-06 & 2.4407280E-07 & 1.0747897E-23 \\ 
   5 & Non-Profit Private: High-Mid & -8.8340360E-07 & 2.3072470E-07 & 1.3269052E-04 \\ 
   6 & For-Profit Private: High-Mid & -1.8751457E-06 & 8.4870800E-07 & 2.7360200E-02 \\ 
-  7 & Public: Mid-Low & 2.5043457E-06 & 2.9169269E-07 & 2.9465536E-17 \\ 
-  8 & Non-Profit Private: Mid-Low & 1.1071596E-06 & 2.8186584E-07 & 8.8551774E-05 \\ 
-  9 & For-Profit Private: Mid-Low & 2.5989969E-06 & 1.0609119E-06 & 1.4456169E-02 \\ 
+  7 & Public: Mid-Low & -6.5401172E-06 & 3.1767348E-07 & 3.0206296E-80 \\ 
+  8 & Non-Profit Private: Mid-Low & -5.3375774E-06 & 2.6979047E-07 & 9.3261399E-80 \\ 
+  9 & For-Profit Private: Mid-Low & -2.5433119E-06 & 7.0384547E-07 & 3.1639444E-04 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -276,7 +276,7 @@ Overall, we find ambiguous evidence that racial outcome gaps are correlated with
 \newpage
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 \newpage
 \section{Random Forest}
 
@@ -346,7 +346,7 @@ Because the spread of the completion rate gaps was much larger than the spread o
 Relating these results to our previous analysis, we find that overall, Expenditures per Student seems to have a stronger relationship with outcome gaps than most other variables, while CONTROL is actually consistently one of the weakest variables. 
 
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Conclusion}
 

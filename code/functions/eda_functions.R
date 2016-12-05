@@ -1,9 +1,9 @@
-#---------------------------------------------------------------------
+#################################################
 # Exploratory Data Analysis Functions
+#################################################
 
 # Description: Functions for plotting relationships between 
 # outcome gaps and our explanatory variables
-#---------------------------------------------------------------------
 
 
 library(ggplot2)
@@ -41,4 +41,3 @@ zoom_plot <- function(var_string, df) {
   dev.off()
 }
 
-cohort_plot("gap_completion_white_hispanic", cohort_comparison)

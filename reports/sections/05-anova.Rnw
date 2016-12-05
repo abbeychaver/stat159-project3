@@ -1,4 +1,4 @@
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 <<setup, echo=False>>=
 library(knitr)
@@ -16,7 +16,7 @@ print(xtable(sum_aov_cr_wb, caption = "ANOVA Table Completion Rate White and Bla
 
 As indicated by the high F statistics and low p-value, there is a significant difference between public, private non-profit, and private school black and white students completion rate gap metric. If we then look further for pair-wise comparisons in the Tukey Plot displayed, we see that the outcome gap is significant between Private For-Profit and Public schools, but not so much between Private For-Profit and Private Non-Profit or Private Non-Profit and Public schools.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{../images/completion_rate_tukeyplot_white_black.png}
 \caption{\label{fig:TukeyPlot}Tukey Plot Completion Rate White and Black Students}
@@ -47,7 +47,7 @@ print(xtable(e_p_value, caption = 'Earnings P-Value Table'), comment = FALSE, ty
 @
 
 
-\begin{figure}
+\begin{figure}{H}
 \centering
 \includegraphics[width=0.8\textwidth]{../images/earnings_tukeyplot_high_low.png}
 \caption{\label{fig:TukeyPlot2}Tukey Plot Earnings High and Low Income Students}

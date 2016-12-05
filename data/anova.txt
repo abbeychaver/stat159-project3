@@ -1,10 +1,11 @@
 
 Anova Summary of Completion Rate of White and Black Students
                  Df Sum Sq Mean Sq F value Pr(>F)  
-cr_w_b$CONTROL    2    1.4  0.6906   3.652 0.0261 *
-Residuals      1938  366.4  0.1891                 
+cr_w_b$CONTROL    2    1.2  0.6210   3.249  0.039 *
+Residuals      1901  363.4  0.1912                 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+200 observations deleted due to missingness
 
 TukeyHSD of Completion Rate of White and Black Students
   Tukey multiple comparisons of means
@@ -14,9 +15,9 @@ Fit: aov(formula = cr_w_b$gap_completion_white_black ~ cr_w_b$CONTROL)
 
 $`cr_w_b$CONTROL`
            diff         lwr          upr     p adj
-2-1 -0.02402725 -0.07727375  0.029219257 0.5401191
-3-1 -0.07612990 -0.14263026 -0.009629545 0.0199928
-3-2 -0.05210265 -0.11342962  0.009224312 0.1142434
+2-1 -0.02230153 -0.07626304  0.031659983 0.5963524
+3-1 -0.07316628 -0.14100636 -0.005326201 0.0308663
+3-2 -0.05086475 -0.11346342  0.011733914 0.1372563
 
 
 Anova Summary of Completion Rate of White and Asian Students
@@ -63,11 +64,10 @@ $`cr_w_h$CONTROL`
 
 Anova Summary of Earnings of High and Low Income Groups
                        Df Sum Sq Mean Sq F value Pr(>F)    
-income_rates$CONTROL    2   6.02  3.0106   196.9 <2e-16 ***
-Residuals            3364  51.43  0.0153                   
+income_rates$CONTROL    2   5.13  2.5644   173.1 <2e-16 ***
+Residuals            3148  46.65  0.0148                   
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-4336 observations deleted due to missingness
 
 TukeyHSD of Earnings of High and Low Income Groups
   Tukey multiple comparisons of means
@@ -77,18 +77,17 @@ Fit: aov(formula = income_rates$gap_earnings_high_low ~ income_rates$CONTROL)
 
 $`income_rates$CONTROL`
            diff         lwr         upr p adj
-2-1 -0.03067917 -0.04308692 -0.01827142     0
-3-1  0.07078987  0.05883918  0.08274056     0
-3-2  0.10146904  0.08902711  0.11391097     0
+2-1 -0.03615661 -0.04867486 -0.02363837     0
+3-1  0.06301061  0.05080739  0.07521383     0
+3-2  0.09916723  0.08644166  0.11189280     0
 
 
 Anova Summary of Earnings of High and Mid Income Groups
-                       Df Sum Sq Mean Sq F value Pr(>F)   
-income_rates$CONTROL    2  0.068 0.03398   4.899 0.0075 **
-Residuals            3364 23.329 0.00693                  
+                       Df Sum Sq  Mean Sq F value Pr(>F)  
+income_rates$CONTROL    2  0.055 0.027429   4.194 0.0152 *
+Residuals            3148 20.590 0.006541                 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-4336 observations deleted due to missingness
 
 TukeyHSD of Earnings of High and Mid Income Groups
   Tukey multiple comparisons of means
@@ -97,19 +96,18 @@ TukeyHSD of Earnings of High and Mid Income Groups
 Fit: aov(formula = income_rates$gap_earnings_high_mid ~ income_rates$CONTROL)
 
 $`income_rates$CONTROL`
-            diff          lwr         upr     p adj
-2-1 -0.006072628 -0.014429653 0.002284397 0.2038699
-3-1  0.005114743 -0.002934438 0.013163923 0.2958583
-3-2  0.011187370  0.002807323 0.019567417 0.0050102
+            diff          lwr          upr     p adj
+2-1 -0.010108829 -0.018425781 -0.001791878 0.0122367
+3-1 -0.003064330 -0.011171984  0.005043323 0.6490482
+3-2  0.007044499 -0.001410194  0.015499192 0.1240723
 
 
 Anova Summary of Earnings of Mid and Low Income Groups
-                       Df Sum Sq Mean Sq F value  Pr(>F)   
-income_rates$CONTROL    2   0.14 0.07141   6.691 0.00126 **
-Residuals            3364  35.90 0.01067                   
+                       Df Sum Sq Mean Sq F value Pr(>F)    
+income_rates$CONTROL    2  5.468  2.7339     279 <2e-16 ***
+Residuals            3148 30.847  0.0098                   
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-4336 observations deleted due to missingness
 
 TukeyHSD of Earnings of Mid and Low Income Groups
   Tukey multiple comparisons of means
@@ -118,8 +116,8 @@ TukeyHSD of Earnings of Mid and Low Income Groups
 Fit: aov(formula = income_rates$gap_earnings_mid_low ~ income_rates$CONTROL)
 
 $`income_rates$CONTROL`
-            diff          lwr          upr     p adj
-2-1  0.002255622 -0.008111583  0.012622827 0.8664064
-3-1 -0.012503623 -0.022488936 -0.002518310 0.0093770
-3-2 -0.014759245 -0.025155010 -0.004363481 0.0025372
+           diff         lwr         upr p adj
+2-1 -0.03068833 -0.04086821 -0.02050845     0
+3-1  0.07011490  0.06019120  0.08003860     0
+3-2  0.10080323  0.09045476  0.11115170     0
 

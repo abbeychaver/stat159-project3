@@ -1,5 +1,5 @@
 
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Exploratory Data Analysis}
 

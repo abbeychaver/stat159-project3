@@ -1,4 +1,11 @@
+#################################################
+# Exploratory Data Analysis
+#################################################
+# Calculating summary statistics and plots of variables of interest
+# Plotting the relationships between expenditure, outcome gaps, and school type
+
 source("code/functions/summary_functions.R")
+source("code/functions/eda_functions.R")
 library(plyr)
 
 school_data <- read.csv("data/school_data.csv")
@@ -13,7 +20,8 @@ qual_stats(classification, "School_Classification")
 # Includes school revenue per student, school expenditure per student, completion rate
 # partitioned by ethnicity, median debts partitioned by income, and mean earnings partitioned by income
 
-cols = c(382, 383, 397, 398, 399, 400, 401, 402, 403, 404, 405, 1507, 1508, 1509, 1655, 1656, 1657)
+cols = c(382, 383, 397, 398, 399, 400, 401, 402, 403, 404, 405, 
+         1507, 1508, 1509, 1655, 1656, 1657)
 data = school_data[, c(4, 17, cols)]
 names = c("Revenue_Per_Student", "Expenditure_Per_Student", "Completion_Rate_White", "Completion_Rate_Black", "Completion_Rate_Hispanic", "Completion_Rate_Asian", "Completion_Rate_American_Indian", "Completion_Rate_Hawaiian_Pacific_Islander", "Completion_Rate_Multiple_Races", "Completion_Rate_Aliens", "Completion_Rate_Unknown_Race", "Median_Debt_Lowest_Income", "Median_Debt_Middle_Income", "Median_Debt_High_Income", "Mean_Earnings_Low_Income", "Mean_Earnings_Middle_Income", "Mean_Earnings_High_Income")
 for (i in 1:length(cols)) {
@@ -54,7 +62,7 @@ df$X <- as.numeric(df$X)
 
 control.code <- c("Public" = 1, "Non-Profit Private"=2, "For-Profit Private"=3)
 df$TYPE <- names(control.code)[match(df$CONTROL, control.code)]
-
+df$INEXPFTE <- as.numeric(as.character(df$INEXPFTE))
 
 CSU_names <- c("California State University-Bakersfield",
                "California State University-Stanislaus",
@@ -86,13 +94,18 @@ UC_names <- c("University of California-Berkeley",
 UC <- df[df$INSTNM %in% UC_names, ]
 UC$cohort = "UC"
 
-elite_private_names <- c("Harvard", "Yale", "Princeton", "Brown", "Cornell", "Duke", 
-                         "University of Pennsylvania", "Dartmouth", "Stanford", 
-                         "Massachusetts Institute of Technology")
+elite_private_names <- c("Harvard University", "Yale University", 
+                         "Princeton University", "Brown University", 
+                         "Cornell University", "Duke University", 
+                         "University of Pennsylvania", "Dartmouth University", 
+                         "Stanford University",
+                         "Columbia University in the City of New York",
+                         "Massachusetts Institute of Technology",
+                         "California Institute of Technology")
 elite <- df[df$INSTNM %in% elite_private_names,]
 elite$cohort = "Elite Private"
 
-INEXPFTE <- combined_data$INEXPFTE
+INEXPFTE <- as.numeric(as.character(combined_data$INEXPFTE))
 
 high_exp_names <- head(combined_data[
   sort.list(INEXPFTE, decreasing = TRUE), ]$INSTNM,
@@ -101,12 +114,9 @@ high_exp_names <- head(combined_data[
 high_exp<- df[df$INSTNM %in% high_exp_names, ]
 high_exp$cohort = "Highest Expenditure"
 
-low_exp_names <- head(combined_data[
-  sort.list(INEXPFTE), ]$INSTNM, n = 40)
-
 cohort_comparison <- rbind(CSU, UC, elite, high_exp)
 
-source("code/functions/eda_functions.R")
+# Scatter plots of these metrics
 gap_metrics = c("gap_completion_white_black", "gap_completion_white_hispanic",
                 "gap_completion_white_asian",  "gap_earnings_high_low",
                 "gap_earnings_high_mid", "gap_earnings_mid_low")
@@ -115,4 +125,3 @@ for (g in gap_metrics) {
   all_plot(g, df)
   zoom_plot(g, df)
 }
-

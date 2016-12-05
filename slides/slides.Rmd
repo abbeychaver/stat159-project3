@@ -1,0 +1,267 @@
+---
+title: "Outcome Gaps in Higher Education"
+author: "Xiaoqian Zhu, Shirley Jin, Tina Huang, Abigail Chaver"
+date: "December 5, 2016"
+output: ioslides_presentation
+---
+
+# Identifying Statistical Patterns in Educational Inequality
+
+## Available Data
+Source: College Scorecard, a federally maintained dataset
+
+Outcome Statistics by Cohort:
+
+* Completion Rates disaggregated by Race (percent)
+* Post-Graduation Earnings disaggregated by Household Income Terciles (in dollars)
+
+Explanatory Statistics for each school:
+
+* Type (Public, Non-Profit Private, For-Profit Private) (coded 1, 2, 3)
+* Instructional Expenditures per Full-time Student (in dollars)
+
+## Questions Motivating our Approach
+Are "outcome gaps" between groups related to the type of school or expenditures?
+
+* Compute gap metrics as percent difference in outcomes
+
+* Conduct hypothesis testing
+
+Are other variables related to outcome gaps?
+
+* Run Random Forest with additional variables for insight on relative importance
+
+# Exploratory Data Analysis
+
+## Completion Rates by Race
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_completion_white_black_cohort.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_completion_white_hispanic_cohort.png" alt="wb cohort" height="400" width="400">
+ 
+</div>
+
+*Trend looks generally negative, but with a lot of variance*
+
+## Completion Rates by Race
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_completion_white_asian_cohort.png" alt="wb cohort" height="400" width="400">
+  
+  *CSUs have significant completion rate gaps, but UCs and private elites have similar outcome gaps despite differences in expenditures.*
+ 
+</div>
+
+## Earnings Gaps by Household Income
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_earnings_high_low_cohort.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_earnings_high_mid_cohort.png" alt="wb cohort" height="400" width="400">
+ 
+</div>
+
+*Interestingly, the gap between middle income and high income students seems to worsen with higher expenditures.*
+
+## Earnings Gaps by Household Income
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_earnings_mid_low_cohort.png" alt="wb cohort" height="400" width="400">
+
+*Negative values indicate that low income students actually tend to outperform middle income students*
+ 
+</div>
+
+## Completion Rates: White-Black
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_completion_white_black.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_completion_white_black_zoom.png" alt="wb cohort" height="400" width="400">
+  
+</div>
+ *The data looks fairly random. Possibly a negative trend, but fairly weak-looking.*
+
+## Completion Rates: White-Hispanic
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_completion_white_hispanic.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_completion_white_hispanic_zoom.png" alt="wb cohort" height="400" width="400">
+  
+</div>
+
+*Similar patterns. It does seem that at higher expenditures, there is less variance in completion gaps.*
+
+## Completion Rates: White-Asian
+
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_completion_white_asian.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_completion_white_asian_zoom.png" alt="wb cohort" height="400" width="400">
+  
+</div>
+*There definitely seem to be differences in means between the three groups, but the distributions are similar.*
+
+## Post Graduation Earnings: High-Low
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_earnings_high_low.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_earnings_high_low_zoom.png" alt="wb cohort" height="400" width="400">
+  
+</div>
+*This correlation for high-low income earnings gaps looks much stronger.*
+
+## Post Graduation Earnings: High-Mid
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_earnings_high_mid.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_earnings_high_mid_zoom.png" alt="wb cohort" height="400" width="400">
+  
+</div>
+*Correlation with high-middle income gaps is less dramatic but still seems to have some negative trend.*
+
+## Post Graduation Earnings: Mid-Low
+<div class="columns-2">
+  <img src="images/eda_scatterplots/gap_earnings_mid_low.png" alt="wb cohort" height="400" width="400">
+  
+  <img src="images/eda_scatterplots/gap_earnings_mid_low_zoom.png" alt="wb cohort" height="400" width="400">
+  
+</div>
+*This pattern seems fairly flat, maybe a slight positive trend.*
+
+# Formal Analysis: ANOVA
+
+## White-Black Completion ANOVA
+
+<div class="columns-8">
+
+  <img src="images/completion_rate_tukeyplot_white_black.png" alt="wb cohort" height="400" width="600">
+  
+</div>
+
+*Little evidence of significance for the difference in white-black completion rate gap between types of schools.*
+
+## White-Hispanic Completion ANOVA
+
+<div class="columns-8">
+
+  <img src="images/completion_rate_tukeyplot_white_hispanics.png" alt="wb cohort" height="400" width="600">
+  
+</div>
+
+*Here we see evidence that for-profit schools have significantly different white-hispanic completion gaps.*
+
+## White-Asian Completion ANOVA
+
+<div class="columns-8">
+
+  <img src="images/completion_rate_tukeyplot_white_asian.png" alt="wb cohort" height="400" width="600">
+  
+</div>
+
+*We see a similar pattern with the white-Asian completion gap difference.*
+
+## High-Low Earnings ANOVA
+
+<div class="columns-8">
+
+  <img src="images/earnings_tukeyplot_high_low.png" alt="wb cohort" height="400" width="600">
+  
+</div>
+*Differences looks more significant here.*
+
+## High-Mid Earnings ANOVA
+
+<div class="columns-8">
+
+  <img src="images/earnings_tukeyplot_high_mid.png" alt="wb cohort" height="400" width="600">
+  
+</div>
+*Less significant in comparison to High-Low.*
+
+## Mid-Low Earnings ANOVA
+
+<div class="columns-8">
+
+  <img src="images/earnings_tukeyplot_mid_low.png" alt="wb cohort" height="400" width="600">
+  
+</div>
+*Differences are less significant. We do see the trends from the past two plots reverse.*
+
+# Formal Analysis: Correlations
+
+## Linear Models
+Hypothesis: coefficients regressing outcome gaps on expenditures will be negative
+
+## Completion Rate Gaps
+
+<div class="columns-8">
+
+  <img src="images/completion_gaps_results.png" alt="wb cohort" height="400" width="700">
+  
+</div>
+*Slopes are mostly insignificantly different from zero. Many are positive - Hypothesis rejected*
+
+## Earnings Gaps
+
+<div class="columns-8">
+
+  <img src="images/earnings_gaps_results.png" alt="wb cohort" height="400" width="700">
+  
+</div>
+*Extremely significant negative coefficient for high-low, others less significant.*
+
+# Random Forest Exploration of other Variables
+
+## Overview
+
+Consider relationships and relative importance of other possibly relevant variables, relating to:
+
+* Location
+* Student Body Racial Diversity
+* Student Body Economic Distribution
+* Selectivity
+* Type of Degree Awarded
+
+## Performance
+Generally performed poorly in terms of proportion of variance explained
+<div class="columns-8">
+
+  <img src="images/rf_performance.png" alt="wb cohort" height="400" width="700">
+  
+</div>
+
+## Completion Rates
+
+<div class="columns-8">
+
+  <img src="images/rf_importance_completion.png" alt="wb cohort" height="400" width="800">
+  
+</div>
+*INEXPFTE is quite important compared to other terms. Diversity also seems relevant.*
+
+## Completion Rates
+<div class="columns-8">
+
+  <img src="images/rf_importance_earnings.png" alt="wb cohort" height="400" width="800">
+  
+</div>
+*INEXPFTE is important again. Economic variables are more important in these models.*
+
+
+
+# Conclusions
+
+## Addressing Motivating Questions
+
+* Completion Rate differences across Races did not seem to correspond strongly with type of school or expenditures
+
+* Signficant evidence of Earnings Gaps across economic backgrounds corresponding with expenditures
+
+* No accounting for multiple testing
+
+* Of many possible variables, Random Forest analysis suggests INEXPFTE is more important than others, but CONTROL is unimportant
+
+

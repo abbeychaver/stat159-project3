@@ -6,7 +6,7 @@
 
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{wrapfig}
@@ -24,22 +24,22 @@ library(knitr)
 opts_chunk$set(fig.pos='H')
 @
 
-\SweaveInput{Abstract.Rnw}
+\SweaveInput{sections/01-Abstract.Rnw}
 
-\SweaveInput{Introduction.Rnw}
+\SweaveInput{sections/02-Introduction.Rnw}
 
-\SweaveInput{Data.Rnw}
+\SweaveInput{sections/03-Data.Rnw}
 
-\SweaveInput{eda.Rnw}
+\SweaveInput{sections/04-eda.Rnw}
 
-\SweaveInput{anova.Rnw}
+\SweaveInput{sections/05-anova.Rnw}
 
-\SweaveInput{second-model.Rnw}
+\SweaveInput{sections/06-second-model.Rnw}
 
 \newpage
 
-\SweaveInput{random_forest.Rnw}
+\SweaveInput{sections/07-random_forest.Rnw}
 
-\SweaveInput{Conclusion.Rnw}
+\SweaveInput{sections/08-Conclusion.Rnw}
 
 \end{document}

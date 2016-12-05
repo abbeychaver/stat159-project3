@@ -1,4 +1,4 @@
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 \section{Abstract}
 
 In this report, we investigate "outcome gaps" in higher education - the widespread phenomenon that underrepresented students have worse outcomes than their well-represented peers. Using data from College Scorecard, a federally maintained dataset, we explore the differences between completion rates across races, and differences between post-graduation earnings across parent-income terciles.

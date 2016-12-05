@@ -1,4 +1,4 @@
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Data}
 
@@ -13,11 +13,11 @@ $$[(White Completion Rate) - (Minority Completion Rate)]/ (White Completion Rate
 For earnings gaps, we have ordered terciles, so we compute
 $$[(Higher Tercile Earnings) - (Lower Tercile Earnings)]/ (Higher Tercile Earnings)$$
 
-While computing these outcome statistics, we found inevitably that we got some were incomputable. This was particularly common with historically black schools, where the completion rate for white students was not recorded or recorded as zero. Therefore, we excluded such observations from our data set, as we are interested in cases where we can compare outcomes between white students and students of color.
+While computing these outcome statistics, we found inevitably that some were incomputable. This was particularly common with historically black schools, where the completion rate for white students was not recorded or recorded as zero. Therefore, we excluded such observations from our data set, as we are interested in cases where we can compare outcomes between white students and students of color.
 
 \subsection{Explanatory Variables}
 
-We found that College Scorecard provided two explanatory variables that were useful for our analysis, "CONTROL", a coded variable representing whether the school is under control of the government, a corporation, or a non-profit. The dataset also provided "INEXPFTE", Instructional Expenditures per Full-Time Student. This is an excellent proxy variable for a quantifier of the resources a school provides to its students.
+We found that College Scorecard provided two explanatory variables that were useful for our analysis, "CONTROL", a coded variable representing whether the school is under control of the government, a corporation, or a non-profit. The dataset also provided `INEXPFTE`, Instructional Expenditures per Full-Time Student. This is an excellent proxy variable for a quantifier of the resources a school provides to its students.
 
 In the third part of our analysis where we consider additional exploratory variables and their interactions, we used our best judgment to choose possible relevant variables. Our random forest regression uses variables related to the type of degree awarded, the region and type of location, the admission rate, the proportion of students of each of the four races considered, the median cost to attend, the median household income, and the poverty rate.
 

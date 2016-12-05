@@ -1,4 +1,4 @@
-% !Rnw root = report.Rnw
+% !Rnw root = ../report.Rnw
 
 \section{Introduction}
 
