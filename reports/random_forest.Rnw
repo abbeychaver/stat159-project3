@@ -48,7 +48,7 @@ In this situation, we are not attempting to build a predictive model. We are foc
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{../images/rf_performance.png}
+\includegraphics[width=0.8\textwidth]{../images/rf_performance.png}
 \caption{\label{fig: RFPerforomance} Most of our Random Forests performed extremely poorly. The best model was that which explained the variance between High and Low Income terciles. Interestingly, this recalls that the most visually noticeable trend in EDA was between these groups.}
 \end{figure}
 
@@ -59,14 +59,14 @@ Because the spread of the completion rate gaps was much larger than the spread o
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{../images/rf_importance_completion.png}
+\includegraphics[width=1\textwidth]{../images/rf_importance_completion.png}
 \caption{\label{fig: RFCompletionRates} The most notable takeaway is that INEXPFTE is in fact one of the most important predictors, especially for the white Asian gap. Recall that this model performed the best of the completion rate models. Another noticeable trend is that the proportion of the student body which is Asian is a strong predictor for the white Asian completion gap. We also see a similar trend with the UGDSBlack for the white black completion gap. Generally, the diversity of the student body seems to be fairly relevant.}
 \end{figure}
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{../images/rf_importance_earnings.png}
+\includegraphics[width=1\textwidth]{../images/rf_importance_earnings.png}
 \caption{\label{fig: EarningsRFImportance} Here again, we see that INEXPFTE is the strongest variable for the best performing model, high low. We also notice that Median Household Income and Cost to Attend are stronger in these models, which intutitively makes sense given that we are comparing groups according to parent income. Interestingly, UGDSBLACK and UGDSASIAN are fairly important as well.}
 \end{figure}
 

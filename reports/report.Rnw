@@ -40,5 +40,6 @@ opts_chunk$set(fig.pos='H')
 
 \SweaveInput{random_forest.Rnw}
 
+\SweaveInput{Conclusion.Rnw}
 
 \end{document}

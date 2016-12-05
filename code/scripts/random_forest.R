@@ -61,21 +61,21 @@ for (i in 2:6) {
   importance_matrix <- rbind(importance_matrix, new_matrix)
 }
 
-png("images/rf_importance_completion.png")
+png("images/rf_importance_completion.png",width=7,height=3, units="in", res=1200)
 ggplot(importance_matrix[1:42, ], aes(x = Variable, y = Node_Purity_Increase)) +
   geom_bar(aes(fill = Gap), position = "dodge", stat="identity") + coord_flip() +
   labs(ylab("Node Purity Increase")) + labs(xlab("Gap Metrics")) +
   ggtitle("Variable Importance: Completion Rate Random Forests")
 dev.off()
 
-png("images/rf_importance_earnings.png")
+png("images/rf_importance_earnings.png", width=7,height=3, units="in", res=1200)
 ggplot(importance_matrix[43:84,], aes(x = Variable, y = Node_Purity_Increase)) +
   geom_bar(aes(fill = Gap), position = "dodge", stat="identity") + coord_flip() +
   labs(ylab("Node Purity Increase")) + labs(xlab("Gap Metrics")) +
   ggtitle("Variable Importance: Earnings Random Forests")
 dev.off()
-var_explained <- c()
 
+var_explained <- c()
 for (i in 1:6) {
   var_explained[i] <- rfs[[i]]$rsq[100]*100
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 DEC 2016 20:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 DEC 2016 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,7 +499,7 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ) [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../images/eda_scatterplots/gap_completion_white_black_cohort.png, id=78, 481.8
+<../images/eda_scatterplots/gap_completion_white_black_cohort.png, id=84, 481.8
 pt x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_black_cohort.png Graphic 
 file (type png)
@@ -509,7 +509,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_black_
 cohort.png used on input line 73.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_completion_white_hispanic_cohort.png, id=80, 48
+<../images/eda_scatterplots/gap_completion_white_hispanic_cohort.png, id=86, 48
 1.8pt x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_hispanic_cohort.png Graph
 ic file (type png)
@@ -519,7 +519,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_hispan
 ic_cohort.png used on input line 74.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_completion_white_asian_cohort.png, id=81, 481.8
+<../images/eda_scatterplots/gap_completion_white_asian_cohort.png, id=87, 481.8
 pt x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_asian_cohort.png Graphic 
 file (type png)
@@ -529,7 +529,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_asian_
 cohort.png used on input line 75.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_high_low_cohort.png, id=82, 481.8pt x 
+<../images/eda_scatterplots/gap_earnings_high_low_cohort.png, id=88, 481.8pt x 
 481.8pt>
 File: ../images/eda_scatterplots/gap_earnings_high_low_cohort.png Graphic file 
 (type png)
@@ -538,7 +538,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_high_low_cohor
 t.png used on input line 81.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_high_mid_cohort.png, id=83, 481.8pt x 
+<../images/eda_scatterplots/gap_earnings_high_mid_cohort.png, id=89, 481.8pt x 
 481.8pt>
 File: ../images/eda_scatterplots/gap_earnings_high_mid_cohort.png Graphic file 
 (type png)
@@ -547,7 +547,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_high_mid_cohor
 t.png used on input line 82.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_mid_low_cohort.png, id=84, 481.8pt x 4
+<../images/eda_scatterplots/gap_earnings_mid_low_cohort.png, id=90, 481.8pt x 4
 81.8pt>
 File: ../images/eda_scatterplots/gap_earnings_mid_low_cohort.png Graphic file (
 type png)
@@ -559,8 +559,8 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_mid_low_cohort
 [2 <../images/eda_scatterplots/gap_completion_white_black_cohort.png> <../image
 s/eda_scatterplots/gap_completion_white_hispanic_cohort.png> <../images/eda_sca
 tterplots/gap_completion_white_asian_cohort.png>]
-<../images/eda_scatterplots/gap_completion_white_black.png, id=95, 481.8pt x 48
-1.8pt>
+<../images/eda_scatterplots/gap_completion_white_black.png, id=101, 481.8pt x 4
+81.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_black.png Graphic file (t
 ype png)
  <use ../images/eda_scatterplots/gap_completion_white_black.png>
@@ -568,8 +568,8 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_black.
 png used on input line 92.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_completion_white_hispanic.png, id=96, 481.8pt x
- 481.8pt>
+<../images/eda_scatterplots/gap_completion_white_hispanic.png, id=102, 481.8pt 
+x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_hispanic.png Graphic file
  (type png)
  <use ../images/eda_scatterplots/gap_completion_white_hispanic.png>
@@ -584,8 +584,8 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_black.
 png used on input line 94.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_completion_white_black_zoom.png, id=97, 481.8pt
- x 481.8pt>
+<../images/eda_scatterplots/gap_completion_white_black_zoom.png, id=103, 481.8p
+t x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_black_zoom.png Graphic fi
 le (type png)
 
@@ -594,8 +594,8 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_black_
 zoom.png used on input line 102.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_completion_white_hispanic_zoom.png, id=98, 481.
-8pt x 481.8pt>
+<../images/eda_scatterplots/gap_completion_white_hispanic_zoom.png, id=104, 481
+.8pt x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_hispanic_zoom.png Graphic
  file (type png)
 
@@ -604,8 +604,8 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_hispan
 ic_zoom.png used on input line 103.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_completion_white_asian_zoom.png, id=99, 481.8pt
- x 481.8pt>
+<../images/eda_scatterplots/gap_completion_white_asian_zoom.png, id=105, 481.8p
+t x 481.8pt>
 File: ../images/eda_scatterplots/gap_completion_white_asian_zoom.png Graphic fi
 le (type png)
 
@@ -614,7 +614,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_completion_white_asian_
 zoom.png used on input line 104.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_high_low.png, id=100, 481.8pt x 481.8p
+<../images/eda_scatterplots/gap_earnings_high_low.png, id=106, 481.8pt x 481.8p
 t>
 File: ../images/eda_scatterplots/gap_earnings_high_low.png Graphic file (type p
 ng)
@@ -623,7 +623,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_high_low.png u
 sed on input line 112.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_high_mid.png, id=101, 481.8pt x 481.8p
+<../images/eda_scatterplots/gap_earnings_high_mid.png, id=107, 481.8pt x 481.8p
 t>
 File: ../images/eda_scatterplots/gap_earnings_high_mid.png Graphic file (type p
 ng)
@@ -632,7 +632,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_high_mid.png u
 sed on input line 113.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_mid_low.png, id=102, 481.8pt x 481.8pt
+<../images/eda_scatterplots/gap_earnings_mid_low.png, id=108, 481.8pt x 481.8pt
 >
 File: ../images/eda_scatterplots/gap_earnings_mid_low.png Graphic file (type pn
 g)
@@ -647,7 +647,7 @@ _black.png> <../images/eda_scatterplots/gap_completion_white_hispanic.png> <../
 images/eda_scatterplots/gap_completion_white_black_zoom.png> <../images/eda_sca
 tterplots/gap_completion_white_hispanic_zoom.png> <../images/eda_scatterplots/g
 ap_completion_white_asian_zoom.png>]
-<../images/eda_scatterplots/gap_earnings_high_low_zoom.png, id=118, 481.8pt x 4
+<../images/eda_scatterplots/gap_earnings_high_low_zoom.png, id=124, 481.8pt x 4
 81.8pt>
 File: ../images/eda_scatterplots/gap_earnings_high_low_zoom.png Graphic file (t
 ype png)
@@ -656,7 +656,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_high_low_zoom.
 png used on input line 122.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_high_mid_zoom.png, id=119, 481.8pt x 4
+<../images/eda_scatterplots/gap_earnings_high_mid_zoom.png, id=125, 481.8pt x 4
 81.8pt>
 File: ../images/eda_scatterplots/gap_earnings_high_mid_zoom.png Graphic file (t
 ype png)
@@ -665,7 +665,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_high_mid_zoom.
 png used on input line 123.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/eda_scatterplots/gap_earnings_mid_low_zoom.png, id=120, 481.8pt x 48
+<../images/eda_scatterplots/gap_earnings_mid_low_zoom.png, id=126, 481.8pt x 48
 1.8pt>
 File: ../images/eda_scatterplots/gap_earnings_mid_low_zoom.png Graphic file (ty
 pe png)
@@ -674,7 +674,7 @@ Package pdftex.def Info: ../images/eda_scatterplots/gap_earnings_mid_low_zoom.p
 ng used on input line 124.
 (pdftex.def)             Requested size: 151.76854pt x 151.76779pt.
 
-<../images/completion_rate_tukeyplot_white_black.png, id=121, 481.8pt x 481.8pt
+<../images/completion_rate_tukeyplot_white_black.png, id=127, 481.8pt x 481.8pt
 >
 File: ../images/completion_rate_tukeyplot_white_black.png Graphic file (type pn
 g)
@@ -687,7 +687,7 @@ erplots/gap_earnings_high_mid.png> <../images/eda_scatterplots/gap_earnings_mid
 _low.png> <../images/eda_scatterplots/gap_earnings_high_low_zoom.png> <../image
 s/eda_scatterplots/gap_earnings_high_mid_zoom.png> <../images/eda_scatterplots/
 gap_earnings_mid_low_zoom.png>]
-<../images/earnings_tukeyplot_high_low.png, id=135, 481.8pt x 481.8pt>
+<../images/earnings_tukeyplot_high_low.png, id=141, 481.8pt x 481.8pt>
 File: ../images/earnings_tukeyplot_high_low.png Graphic file (type png)
 
 <use ../images/earnings_tukeyplot_high_low.png>
@@ -696,56 +696,73 @@ t line 193.
 (pdftex.def)             Requested size: 404.71353pt x 404.72394pt.
  [5 <../images/completion_rate_tukeyplot_white_black.png>] [6 <../images/earnin
 gs_tukeyplot_high_low.png>]
-[7] [8]
-<../images/rf_treesgap_completion_white_black.png, id=164, 481.8pt x 481.8pt>
+<../images/completion_gaps_results.png, id=155, 8431.5pt x 3613.5pt>
+File: ../images/completion_gaps_results.png Graphic file (type png)
+
+<use ../images/completion_gaps_results.png>
+Package pdftex.def Info: ../images/completion_gaps_results.png used on input li
+ne 238.
+(pdftex.def)             Requested size: 505.89pt x 216.80064pt.
+ [7]
+<../images/earnings_gaps_results.png, id=164, 8431.5pt x 3613.5pt>
+File: ../images/earnings_gaps_results.png Graphic file (type png)
+
+<use ../images/earnings_gaps_results.png>
+Package pdftex.def Info: ../images/earnings_gaps_results.png used on input line
+ 266.
+(pdftex.def)             Requested size: 505.89pt x 216.80064pt.
+ [8 <../images/completion_gaps_results.png>] [9 <../images/earnings_gaps_result
+s.png>]
+<../images/rf_treesgap_completion_white_black.png, id=178, 481.8pt x 481.8pt>
 File: ../images/rf_treesgap_completion_white_black.png Graphic file (type png)
 
 <use ../images/rf_treesgap_completion_white_black.png>
 Package pdftex.def Info: ../images/rf_treesgap_completion_white_black.png used 
-on input line 454.
+on input line 316.
 (pdftex.def)             Requested size: 252.94499pt x 252.94142pt.
 
-<../images/rf_performance.png, id=165, 481.8pt x 481.8pt>
+<../images/rf_performance.png, id=179, 481.8pt x 481.8pt>
 File: ../images/rf_performance.png Graphic file (type png)
 
 <use ../images/rf_performance.png>
-Package pdftex.def Info: ../images/rf_performance.png used on input line 462.
-(pdftex.def)             Requested size: 252.94499pt x 252.94142pt.
- [9 <../images/rf_treesgap_completion_white_black.png>] <../images/rf_importanc
-e_completion.png, id=174, 481.8pt x 481.8pt>
+Package pdftex.def Info: ../images/rf_performance.png used on input line 324.
+(pdftex.def)             Requested size: 404.71353pt x 404.72394pt.
+ [10 <../images/rf_treesgap_completion_white_black.png>]
+<../images/rf_importance_completion.png, id=187, 8431.5pt x 3613.5pt>
 File: ../images/rf_importance_completion.png Graphic file (type png)
 
 <use ../images/rf_importance_completion.png>
 Package pdftex.def Info: ../images/rf_importance_completion.png used on input l
-ine 473.
-(pdftex.def)             Requested size: 252.94499pt x 252.94142pt.
- [10 <../images/rf_performance.png>] <../images/rf_importance_earnings.png, id=
-183, 481.8pt x 481.8pt>
+ine 335.
+(pdftex.def)             Requested size: 505.89pt x 216.80064pt.
+ [11 <../images/rf_performance.png>] <../images/rf_importance_earnings.png, id=
+194, 8431.5pt x 3613.5pt>
 File: ../images/rf_importance_earnings.png Graphic file (type png)
 
 <use ../images/rf_importance_earnings.png>
 Package pdftex.def Info: ../images/rf_importance_earnings.png used on input lin
-e 480.
-(pdftex.def)             Requested size: 252.94499pt x 252.94142pt.
- [11 <../images/rf_importance_completion.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 487.
- [12 <../images/rf_importance_earnings.png>] [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 487.
+e 342.
+(pdftex.def)             Requested size: 505.89pt x 216.80064pt.
+ [12 <../images/rf_importance_completion.png> <../images/rf_importance_earnings
+.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 361.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 361.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 487.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 487.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 361.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 361.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 85752296D49A54B6575F7678CBAB3955;695.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 487.
+(rerunfilecheck)             Checksum: DEEA8898F1AAB4779C3D1DCEA3611984;741.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 361.
  ) 
 Here is how much of TeX's memory you used:
- 7560 strings out of 493014
- 114243 string characters out of 6133351
- 211697 words of memory out of 5000000
- 10907 multiletter control sequences out of 15000+600000
+ 7566 strings out of 493014
+ 114635 string characters out of 6133351
+ 204259 words of memory out of 5000000
+ 10918 multiletter control sequences out of 15000+600000
  24570 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,8n,32p,761b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,8n,32p,851b,349s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -754,10 +771,10 @@ r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (13 pages, 932946 bytes).
+Output written on report.pdf (13 pages, 3203421 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
- 54 named destinations out of 1000 (max. 500000)
- 272 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 298 words of extra memory for PDF output out of 10000 (max. 10000000)
 

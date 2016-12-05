@@ -598,4 +598,78 @@ cat('\nOLS MSE between middle and low in private for profit school\n')
 print(ols_mse_pft_ml)
 cat('\nOLS regression coefficients between middle and low in private for profit school\n')
 print(ols_coefficients_pft_ml)
-sink()       
+sink()     
+
+
+# Plots and tables
+
+# Earnings Gaps Coefficients
+Model <- c('Public: High-Low', 'Non-Profit Private: High-Low', 'For-Profit Private: High-Low', 
+           'Public: High-Mid', 'Non-Profit Private: High-Mid', 'For-Profit Private: High-Mid', 
+           'Public: Mid-Low', 'Non-Profit Private: Mid-Low', 'For-Profit Private: Mid-Low')
+
+Estimate <- c(ols_summary_pbc_hl$coefficients[2], ols_summary_pvt_hl$coefficients[2], 
+              ols_summary_pft_hl$coefficients[2], ols_summary_pbc_hm$coefficients[2], 
+              ols_summary_pvt_hm$coefficients[2], ols_summary_pft_hm$coefficients[2],
+              ols_summary_pbc_ml$coefficients[2], ols_summary_pvt_ml$coefficients[2], 
+              ols_summary_pft_ml$coefficients[2])
+SE <- c(ols_summary_pbc_hl$coefficients[4], ols_summary_pvt_hl$coefficients[4], 
+        ols_summary_pft_hl$coefficients[4], ols_summary_pbc_hm$coefficients[4], 
+        ols_summary_pvt_hm$coefficients[4], ols_summary_pft_hm$coefficients[4],
+        ols_summary_pbc_ml$coefficients[4], ols_summary_pvt_ml$coefficients[4], 
+        ols_summary_pft_ml$coefficients[4])
+p <- c(ols_summary_pbc_hl$coefficients[8], ols_summary_pvt_hl$coefficients[8], 
+       ols_summary_pft_hl$coefficients[8], ols_summary_pbc_hm$coefficients[8], 
+       ols_summary_pvt_hm$coefficients[8], ols_summary_pft_hm$coefficients[8],
+       ols_summary_pbc_ml$coefficients[8], ols_summary_pvt_ml$coefficients[8], 
+       ols_summary_pft_ml$coefficients[8])
+
+earnings_gaps_results <- data.frame(Model, Estimate, SE, p)
+earnings_gaps_results$Model <- factor(earnings_gaps_results$Model, 
+                                      levels = earnings_gaps_results$Model)
+earnings_gaps_table <- xtable(earnings_gaps_results, 
+                              caption = 'Income Gap Slope comparison', digits = -7)
+
+png("../images/earnings_gaps_results.png", width=7,height=3, units="in", res=1200)
+ggplot(earnings_gaps_results, aes(x = Model, y = Estimate)) +
+  geom_point() + coord_flip() +
+  geom_errorbar(aes(x = Model, ymin = Estimate - 2*SE, ymax = Estimate + 2*SE)) +
+  labs(title= "Slope Estimates: Earnings Gap ~ INEXPFTE
+       2 SE Intervals")
+dev.off()
+
+Model <- c('Public: White-Black', 'Non-Profit Private: White-Black', 
+           'For-Profit Private: White-Black', 'Public: White-Hispanic', 
+           'Non-Profit Private: White-Hispanic', 'For-Profit Private: White-Hispanic', 
+           'Public: White-Asian', 'Non-Profit Private: White-Asian', 
+           'For-Profit Private: White-Asian')
+
+Estimate <- c(ols_summary_pbc_wb$coefficients[2], ols_summary_pvt_wb$coefficients[2], 
+              ols_summary_pft_wb$coefficients[2], ols_summary_pbc_wh$coefficients[2], 
+              ols_summary_pvt_wh$coefficients[2], ols_summary_pft_wh$coefficients[2],
+              ols_summary_pbc_wa$coefficients[2], ols_summary_pvt_wa$coefficients[2], 
+              ols_summary_pft_wa$coefficients[2])
+SE <- c(ols_summary_pbc_wb$coefficients[4], ols_summary_pvt_wb$coefficients[4], 
+              ols_summary_pft_wb$coefficients[4], ols_summary_pbc_wh$coefficients[4], 
+              ols_summary_pvt_wh$coefficients[4], ols_summary_pft_wh$coefficients[4],
+              ols_summary_pbc_wa$coefficients[4], ols_summary_pvt_wa$coefficients[4], 
+              ols_summary_pft_wa$coefficients[4])
+p <- c(ols_summary_pbc_wb$coefficients[8], ols_summary_pvt_wb$coefficients[8], 
+        ols_summary_pft_wb$coefficients[8], ols_summary_pbc_wh$coefficients[8], 
+        ols_summary_pvt_wh$coefficients[8], ols_summary_pft_wh$coefficients[8],
+        ols_summary_pbc_wa$coefficients[8], ols_summary_pvt_wa$coefficients[8], 
+        ols_summary_pft_wa$coefficients[8])
+
+completion_gaps_results <- data.frame(Model, Estimate, SE, p)
+completion_gaps_results$Model <- factor(completion_gaps_results$Model, 
+                                      levels = completion_gaps_results$Model)
+
+png("../images/completion_gaps_results.png",  width=7, height=3, units="in", res=1200)
+ggplot(completion_gaps_results, aes(x = Model, y = Estimate)) +
+  geom_point() + coord_flip() +
+  geom_errorbar(aes(x = Model, ymin = Estimate - 2*SE, ymax = Estimate + 2*SE)) +
+  labs(title= "Slope Estimates: Completion Gap ~ INEXPFTE
+       2 SE Intervals")
+dev.off()
+
+save.image("../data/second-model.RData")

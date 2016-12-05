@@ -3,7 +3,7 @@
 
 \section{Conclusion}
 
-In this report, we investigate outcome gaps in higher education with a particular focus on the relationship with school expenditures. While the significance of our results varied, we did find some significant patterns confirming a relationship. Our most notable conclusion is that there is a strong negative linear relationship between school expenditures per student and the post-graduation earnings gap between students of high-income backgrounds and low-income backgrouds. We see visually that at around $15,000 per year, the income gaps reach their ideal point, which is clustered evenly around zero. 
+In this report, we investigate outcome gaps in higher education with a particular focus on the relationship with school expenditures. While the significance of our results varied, we did find some significant patterns confirming a relationship. Our most notable conclusion is that there is a strong negative linear relationship between school expenditures per student and the post-graduation earnings gap between students of high-income backgrounds and low-income backgrouds. We see visually that at around \$15,000 per year, the income gaps reach their ideal point, which is clustered evenly around zero. 
 
 It is somewhat irresponsible to draw causal conclusions from this observed pattern. However, it is notable that compared to many other variables, instructional expenditure per student stands out as the most important variable of many in our random forest models. While school expenditure cannot tell the whole story, there is compelling evidence that there is a relationship between the resources devoted to education and reduced educational inequality. 
 
