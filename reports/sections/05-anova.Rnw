@@ -22,7 +22,7 @@ As indicated by the high F statistics and low p-value, there is a significant di
 \caption{\label{fig:TukeyPlot}Tukey Plot Completion Rate White and Black Students}
 \end{figure}
 
-Doing similar analysis for completion rates by other racial groups, we see the completion rate gap metric is significant with Private For-Profit and Public schools in general. The gap metric is also signifcant with Private For-Profit and Private Non-Profit for Hispanic and White students.
+Doing similar analysis for completion rates by other racial groups, we see the completion rate gap metric is significant with Private For-Profit and Public schools in general. The gap metric is also signifcant with Private For-Profit and Private Non-Profit for Hispanic and White students, and Asian and White students.
 
 <<completion rate table, echo=False, results = tex, fig.pos=H>>=
 Institutions <- c("Private Non-Profit w/ Public", "Private For-Profit w/ Public","Private For-Profit w/ Private Non-Profit")
@@ -34,7 +34,7 @@ cr_p_value <- data.frame(Institutions,White_Black, White_Asian, White_Hispanic)
 print(xtable(cr_p_value, caption = 'Completion Rate P-Value Table'), comment = FALSE, type = 'latex')
 @
 
-Looking at the earnings gap metric amongst different student income groups, we see that the outcome gap is significant amongst all institution types for low income students. The gap is significant between Private Non-Profit and Public schools for high and mid income students.
+Looking at the earnings gap metric amongst different student income groups, we see that the outcome gap is significant when comparing with low income students for all institution types. The gap is significant between Private Non-Profit and Public schools for high and mid income students.
 
 <<completion rate table, echo=False, results = tex, fig.pos=H>>=
 Institutions <- c("Private Non-Profit w/ Public", "Private For-Profit w/ Public","Private For-Profit w/ Private Non-Profit")
