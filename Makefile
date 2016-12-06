@@ -41,7 +41,7 @@ shiny-completion: shiny/funding_type_completion_app.R
 	Rscript -e "library(shiny); runApp('$<', launch.browser = TRUE)"
 
 # Updates information about session in session-info.txt
-session:
+session: code/scripts/session_info.R
 	bash session.sh
 
 # Creates the final report/report.pdf file
