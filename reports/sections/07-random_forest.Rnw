@@ -3,7 +3,7 @@
 \newpage
 \section{Random Forest}
 
-Our goal in this section is to do some inference on other possible predictors. We identified fourteen variables which we considered possibly relevant and briefly summarize them in Table 16.
+Our goal in this section is to do some inference on other possible predictors. We identified fourteen variables which we considered possibly relevant and briefly summarize them in Table 6.
   
 <<setup of tables, echo = FALSE, fig.pos="!h">>=
 library(xtable)

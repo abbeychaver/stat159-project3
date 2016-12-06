@@ -2,16 +2,16 @@
 
 \section{Correlation Analysis on Expenditure per Student}
 
-We are trying to find the relationship between the gap metrics, including the completion gap and income gap,  and school revenue per student, to see whether the school revenue per student has a negative correlation with the gap metrics. 
+We are trying to find the relationship between the gap metrics, including the completion gap and income gap, and school expenditure per student, to see whether the school expenditure per student has a negative correlation with the gap metrics. 
 
 \subsection{Methodology}
 
-We start our analysis by setting up null and alternative hypothesis. The null hypothesis is, $H_{0}$, that there is no relationship between gap metrics and school expenditures per student; the alternative hypothesis is, $H_{1}$, that there is a relationship between gap metrics and school expenditure per student. These are equal to the following that $H_{0}: \beta_1 = 0$ and $H_{0}: \beta_1 \neg 0$. To test the hypothesis, we apply a simple regression model like $Gapterms= \beta_0 + \beta_1 INEXPFTE$. For both completion gap and income gap, we have three pairs of groups due to three race groups we have, thus we also have three regressions for each gap metric. In this case, we will use the least squares model on our data for the regression analysis. 
+We start our analysis by setting up null and alternative hypothesis. The null hypothesis is, $H_{0}$, that there is no relationship between gap metrics and school expenditure per student; the alternative hypothesis is, $H_{1}$, that there is a relationship between gap metrics and school expenditure per student. These are equal to the following that $H_{0}: \beta_1 = 0$ and $H_{0}: \beta_1 \neq 0$. To test the hypothesis, we apply a simple regression model like $Gapterms= \beta_0 + \beta_1 INEXPFTE$. For both completion gap and income gap, we have three pairs of groups due to three race groups we have, thus we also have three regressions for each gap metric. In this case, we will use the least squares model on our data for the regression analysis. 
 
 
 \subsection{Results}
 
-Running regression through R, we can compute get the estimated coefficients. The regression coefficients for completion gap is given in the tables below:
+Running regression through R, we can compute the estimated coefficients. The regression coefficients for completion gap is given in the tables below:
 
 <<setup of tables, echo = FALSE>>=
 library(xtable)

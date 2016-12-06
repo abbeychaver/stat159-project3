@@ -26,17 +26,19 @@ ols: code/scripts/ols-second-model.R data/Completion_W_A.csv data/Completion_W_B
 rf: data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
 	Rscript code/scripts/random_forest.R
 
-shiny-earnings: 
+shiny-earnings: shiny/funding_type_earning_app.R
 	Rscript -e "library(shiny); runApp('shiny/funding_type_earning_app.R', launch.browser = TRUE)"
 
-shiny-completion:
+shiny-completion: shiny/funding_type_completion_app.R
 	Rscript -e "library(shiny); runApp('shiny/funding_type_completion_app.R', launch.browser = TRUE)"
 
 session:
 	bash session.sh
+
 report: 
 	cd reports; R CMD Sweave --pdf report.Rnw; rm report-concordance.tex; rm report.aux; rm report.log; rm report.out; rm report.tex; cd ..
-slides:
+
+slides: slides/slides.Rmd
 	Rscript -e "rmarkdown::render('slides/slides.Rmd')"
 
 clean:
