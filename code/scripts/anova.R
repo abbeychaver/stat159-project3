@@ -14,7 +14,7 @@ cr_w_a$CONTROL <- as.factor(cr_w_a$CONTROL)
 cr_w_h$CONTROL <- as.factor(cr_w_h$CONTROL)
 income_rates$CONTROL <- as.factor(income_rates$CONTROL)
 
-# Creating boxplots of data (maybe should be in eda)
+# Creating boxplots of data
 png('images/completion_rate_boxplot_white_black.png')
 boxplot(cr_w_b$gap_completion_white_black ~ cr_w_b$CONTROL, outline=FALSE, xlab= "Classification of Institution", ylab= "Gap Metric", xaxt = "n", main= "Completion Rate Gap Between White and Black Students")
 axis(1, at=1:3, labels=c("Public", "Private Non-Profit", "Private For-Profit"))
@@ -27,24 +27,24 @@ tukey_cr_wb <- TukeyHSD(aov_cr_wb, main="White-Black Completion Rate Differences
 
 aov_cr_wa <- aov(cr_w_a$gap_completion_white_asian ~ cr_w_a$CONTROL)
 sum_aov_cr_wa <- summary(aov_cr_wa)
-tukey_cr_wa <- TukeyHSD(aov_cr_wa)
+tukey_cr_wa <- TukeyHSD(aov_cr_wa, main="White-Asian Completion Rate Differences")
 
 aov_cr_wh <- aov(cr_w_h$gap_completion_white_hispanic ~ cr_w_h$CONTROL)
 sum_aov_cr_wh <- summary(aov_cr_wh)
-tukey_cr_wh <- TukeyHSD(aov_cr_wh)
+tukey_cr_wh <- TukeyHSD(aov_cr_wh, main="White-Hispanic Completion Rate Differences")
 
 # Anova Analysis For Income Groups
 aov_e_hl <- aov(income_rates$gap_earnings_high_low ~ income_rates$CONTROL)
 sum_aov_e_hl <- summary(aov_e_hl)
-tukey_e_hl <- TukeyHSD(aov_e_hl)
+tukey_e_hl <- TukeyHSD(aov_e_hl, main="High-Low Income Earnings Differences")
 
 aov_e_hm <- aov(income_rates$gap_earnings_high_mid ~ income_rates$CONTROL)
 sum_aov_e_hm <- summary(aov_e_hm)
-tukey_e_hm <- TukeyHSD(aov_e_hm)
+tukey_e_hm <- TukeyHSD(aov_e_hm, main="High-Mid Income Earnings Differences")
 
 aov_e_ml <- aov(income_rates$gap_earnings_mid_low ~ income_rates$CONTROL)
 sum_aov_e_ml <- summary(aov_e_ml)
-tukey_e_ml <- TukeyHSD(aov_e_ml)
+tukey_e_ml <- TukeyHSD(aov_e_ml, main="Mid-Low Income Earnings Differences")
 
 # Creating Tukey Plots
 png('images/completion_rate_tukeyplot_white_black.png', 
