@@ -71,6 +71,7 @@ Once you have this directory locally, `cd` into the root directory. Then you can
 - Run `make` or `make all` to run all the R files to generate the text summaries of all the variables, all the plots, and the final report file.
 - Run `make premodel` to clean and separate the data into its relevant .csv files. 
 - Run `make eda` to create summaries and plots for the variables in the `school_data.csv` dataset
+- Run `make anova` to conduct analysis of variance
 - Run `make ols` to fit the ols regression model
 - Run `make rf` to generate the random forest models
 - Run `make shiny-earnings` to launch the shiny application in the browser that plots the mean earnings gap against school student funding
