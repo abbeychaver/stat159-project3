@@ -4,9 +4,9 @@ funcs = code/functions/summary_functions.R
 eda = code/scripts/eda.R
 income = data/Income.csv
 
-.PHONY: all data eda premodel anova ols rf session clean
+.PHONY: all data eda premodel anova ols rf shiny-earnings shiny-completion session report slides clean
 
-all: premodel eda anova ols rf
+all: premodel eda anova ols rf shiny-earnings shiny-completion report slides
 
 # Downloads the most recent College Score Card data to data/school_data.csv
 data:
@@ -21,12 +21,12 @@ eda: $(school) $(funcs)
 	Rscript $(eda)
 
 # Runs anova analysis
-anova:
+anova: data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
 	Rscript code/scripts/anova.R
 
 # Fits ols regression model to the dataset
-ols: code/scripts/ols-second-model.R data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
-				Rscript code/scripts/ols-second-model.R
+ols: data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
+	Rscript code/scripts/ols-second-model.R
 
 # Fits random forest model to other relevant variables in the dataset
 rf: data/Completion_W_A.csv data/Completion_W_B.csv data/Completion_W_H.csv data/Income.csv
