@@ -1,6 +1,6 @@
 ---
 title: "Outcome Gaps in Higher Education"
-author: "Xiaoqian Zhu, Shirley Jin, Tina Huang, Abigail Chaver"
+author: "Xiaoqian Zhu, Shirley Jin, Tina Huang, and Abigail Chaver"
 date: "December 5, 2016"
 output: ioslides_presentation
 ---
