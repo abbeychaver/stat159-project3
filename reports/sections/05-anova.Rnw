@@ -19,7 +19,7 @@ As indicated by the high F statistics and low p-value, there is a significant di
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{../images/completion_rate_tukeyplot_white_black.png}
-\caption{\label{fig:TukeyPlot}Tukey Plot Completion Rate White and Black Students}
+\caption{\label{fig:TukeyPlot}Completion Rate White and Black Students Tukey Plot}
 \end{figure}
 
 Doing similar analysis for completion rates by other racial groups, we see the completion rate gap metric is significant with Private For-Profit and Public schools in general. The gap metric is also signifcant with Private For-Profit and Private Non-Profit for Hispanic and White students, and Asian and White students.
@@ -31,10 +31,10 @@ White_Asian <- as.vector(tukey_cr_wa[[1]][,4])
 White_Hispanic <- as.vector(tukey_cr_wh[[1]][,4])
 
 cr_p_value <- data.frame(Institutions,White_Black, White_Asian, White_Hispanic)
-print(xtable(cr_p_value, caption = 'Completion Rate P-Value Table'), comment = FALSE, type = 'latex')
+print(xtable(cr_p_value, caption = 'Completion Rate Tukey HSD P-Values'), comment = FALSE, type = 'latex')
 @
 
-Looking at the earnings gap metric amongst different student income groups, we see that the outcome gap is significant when comparing with low income students for all institution types. The gap is significant between Private Non-Profit and Public schools for high and mid income students.
+Looking at the earnings gap metric amongst different student income groups, we see that the outcome gap is significant when comparing with low income students for all institution types. The gap is also significant between Private Non-Profit and Public schools for high and mid income students.
 
 <<completion rate table, echo=False, results = tex, fig.pos=H>>=
 Institutions <- c("Private Non-Profit w/ Public", "Private For-Profit w/ Public","Private For-Profit w/ Private Non-Profit")
@@ -43,13 +43,13 @@ High_Mid <- as.vector(tukey_e_hm[[1]][,4])
 Mid_Low <- as.vector(tukey_e_ml[[1]][,4])
 
 e_p_value <- data.frame(Institutions,High_Low, High_Mid, Mid_Low)
-print(xtable(e_p_value, caption = 'Earnings P-Value Table'), comment = FALSE, type = 'latex')
+print(xtable(e_p_value, caption = 'Earnings Tukey HSD P-Values'), comment = FALSE, type = 'latex')
 @
 
 
-\begin{figure}{H}
+\begin{figure}{}
 \centering
 \includegraphics[width=0.8\textwidth]{../images/earnings_tukeyplot_high_low.png}
-\caption{\label{fig:TukeyPlot2}Tukey Plot Earnings High and Low Income Students}
+\caption{\label{fig:TukeyPlot2}Earnings High and Low Income Students Tukey Plot}
 \end{figure}
 
